@@ -1,0 +1,162 @@
+body {
+    height: 100%;
+    width: 100%;
+    size: auto;
+}
+
+.margins {
+    width: 10%;
+}
+
+.margins #left-margin {
+    alignment: left;
+}
+
+.margins #right-margin {
+    alignment: right;
+}
+
+h3 {
+    color: cornflowerblue;
+    font-family: Calibri;
+    font-size: 25px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    text-align: left;
+}
+
+h2 {
+    color: black;
+    font-family: Calibri;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: bold;
+    text-align: left;
+}
+
+.preview-container {
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+    padding: 10px;
+    width: 80%;
+
+}
+
+th {
+    text-align: left;
+}
+
+.question_description{
+    width: auto;
+}
+
+.question {
+    text-align: left;
+    font-weight: 400;
+    font-size: 18px;
+    color: #525252;
+    padding: 10px;
+    line-height: 1.5em;
+}
+label .question {
+    text-align: left;
+}
+.next_button {
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    -webkit-appearance: none;
+    transition: background .3s;
+    background-color: #007ac0;
+    box-sizing: border-box;
+    width: 60px;
+}
+
+.Answers {
+    padding: 200px;
+}
+
+button.link {
+    background:none;
+    border:none;
+}
+
+.question {
+    width: 1000px;
+}
+
+.consent {
+    text-align: left;
+}
+
+.question2 {
+    text-align: left;
+    font-weight: 750;
+    font-size: 18px;
+    color: #525252;
+    padding: 10px;
+    line-height: 1.5em;
+}
+
+.logo-preview {
+    height: inherit;
+    width: 80%;
+    padding: 10px;
+    width: 1000px;
+    box-sizing: border-box;
+}
+
+.kit-logo {
+    float: left;
+    width: 30%;
+}
+
+.kdlab-logo {
+    float: right;
+    width: 30%;
+}
+
+.logo {
+    height: inherit;
+    width: 60%;
+}
+
+#kdlab_logo {
+    float: right;
+}
+
+.logo-header {
+    height: 100%;
+    overflow: hidden;
+    padding: 10px;
+    width: 100%;
+}
+
+.body-preview {
+    width: 100%;
+    overflow-y: auto;
+}
+
+ol2 {
+  list-style-type: none;
+  counter-reset: elementcounter;
+
+}
+
+li2:before {
+  content: "Stufe " counter(elementcounter) ". ";
+  counter-increment: elementcounter;
+  font-weight: bold;
+}

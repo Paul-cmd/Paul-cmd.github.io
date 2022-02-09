@@ -1,0 +1,167 @@
+body {
+    height: 100%;
+    width: 100%;
+    size: auto;
+}
+
+.logo-header {
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+}
+
+tbody {
+    height: 100%;
+}
+
+.margins {
+    width: 10%;
+}
+
+#left-margin\ up, #right-margin\ up {
+    height: inherit;
+}
+
+.logo-preview {
+    height: inherit;
+    width: 80%;
+}
+
+.kit-logo {
+    float: left;
+    width: 30%;
+}
+
+.kdlab-logo {
+    float: right;
+    width: 30%;
+}
+
+.logo {
+    height: inherit;
+    width: 60%;
+}
+
+#kdlab_logo {
+    float: right;
+}
+
+.body-preview {
+    width: 100%;
+    overflow-y: auto;
+}
+
+.open_form {
+    width: 100%;
+    height: 100px;
+}
+.textarea {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: both;
+    min-height: 40px;
+    line-height: 20px;
+}
+
+.textarea[contenteditable]:empty::before {
+    content: "Begründen Sie Ihre Antwort ...";
+    color: gray;
+}
+
+.textarea, .input {
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 1px 6px;
+}
+
+#zusammenfassung[contenteditable]:empty::before {
+    content: "Zusammenfassung des Forschungsentwurfs ...";
+}
+
+#erläuterung[contenteditable]:empty::before {
+    content: "Weitere Erläuterungen ...";
+}
+
+#inventar[contenteditable]:empty::before {
+    content: "Bitte geben Sie Ihre Inventarliste ein ...";
+}
+
+#name_list[contenteditable]:empty::before {
+    content: "Bitte geben Sie alle Namen ein ...";
+}
+
+div {
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.question_header {
+    width: 70%;
+}
+
+td .answers {
+    text-align: center;
+}
+
+.hint {
+    display: none;
+}
+
+.label:hover .hint {
+    display: flex;
+    visibility: visible;
+    background: gray;
+    width: fit-content;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    top: 100%;
+    left: 50%;
+}
+
+.next_button {
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    -webkit-appearance: none;
+    transition: background .3s;
+    background-color: #007ac0;
+    box-sizing: border-box;
+    width: 60px;
+}
+
+.collapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    background-color: #fffff;
+}
+
+.active, .collapsible:hover {
+    background-color: #fffff;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #ffffff;
+}
