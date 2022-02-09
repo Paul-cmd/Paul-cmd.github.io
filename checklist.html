@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forschungsethikverfahren der KD²Lab Partner:innen</title>
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../js/scripts.js"></script>
+    <script>
+        function hideCL1() {
+            var x = document.getElementById("stufen");
+            var y = document.getElementById("CL1");
+            if (x.value === "no") {
+                y.style.display = "block";
+                }
+            else {
+                y.style.display = "none";
+                }
+            }
+    </script>
+    <script>
+        function hideCL2() {
+            var x = document.getElementById("stufen");
+            var y = document.getElementById("CL2");
+            if (x.value === "no") {
+                y.style.display = "block";
+                }
+            else {
+                y.style.display = "none";
+                }
+            }
+    </script>
+</head>
+<body>
+
+<table class="logo-header">
+    <tbody>
+    <tr>
+        <td class="margins" id="left-margin up"></td>
+        <td class="logo-preview">
+            <div class="logo-container">
+                <div class="kit-logo">
+                    <img class="logo" id="kit_logo" src="../src/kit_logo_de_farbe_positiv.jpg" alt="KIT Logo">
+                </div>
+                <div class="kdlab-logo">
+                    <img class="logo" id="kdlab_logo" src="../src/KD2Lab_color.png" alt="KD²Lab Logo">
+                </div>
+            </div>
+        </td>
+        <td class="margins" id="right-margin up"></td>
+    </tr>
+    </tbody>
+</table>
+<table class="body-preview">
+    <tbody>
+    <tr>
+        <td class="margins" id="left-margin down"></td>
+        <td class="body-container">
+            <div class="Forschungsethikkommission">
+                <h1>Forschungsethikverfahren der KD²Lab Partner:innen</h1>
+            </div>
+            <div>
+                <h2>Checkliste</h2>
+                <p>Bitte füllen Sie das folgende Formular für Ihre Studie wahrheitsgemäß aus.</p>
+            </div>
+            <div>
+                <h1>Abschnitt I: Studiendetails</h1>
+            </div>
+            <div class="question-wrapper">
+                <div class="question">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="titel">1. <strong>Studientitel:</strong> </label>
+                            </td>
+                            <td>
+                                <input type="text" id="titel">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="projektfoerder">2. <strong>Der/die Projektförder:in und Projektcode, falls bekannt:</strong> </label>
+                            </td>
+                            <td>
+                                <input type="text" id="projektfoerder">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                3. <strong>Zeitraum der Datenerhebung:</strong>
+                            </td>
+                            <td>
+                                <input type="date" id="start">
+                                <label for="end">bis </label> <input type="date" id="end">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="question-wrapper">
+                <div class="question">
+                    <label for="zusammenfassung">4. <strong>Zusammenfassung des Forschungsentwurfs (ca. 200 Wörter).Geben Sie Informationen über die
+                        Auswahl der Teilnehmer:innen, die Forschungsmethode (z.B. Labor/Feld), sowie die Datenerfassung und
+                        -speicherung an.</strong>
+                    </label>
+                    <br>
+                    <textarea id="zusammenfassung" style="font-weight: normal" contenteditable rows="15" cols="200">Bitte geben Sie hier ein Zusammenfassung des Forschungsentwurfs ein!</textarea>
+                </div>
+            </div>
+            <div>
+                <h1>Abschnitt II: Angaben zum/zur Experimentator:in</h1>
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">5. <strong>Namen des/der Experimentator:in:</strong> </label>
+                    </td>
+                    <td>
+                        <input type="text" id="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="inst">6. <strong>Institut:</strong> </label>
+                    </td>
+                    <td>
+                        <input type="text" id="inst">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="betreuer">7. <strong>Betreuer:in (für Doktorand:innen):</strong> </label>
+                    </td>
+                    <td>
+                        <input type="text" id="betreuer">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">8. <strong>E-Mail-Adresse:</strong> </label>
+                    </td>
+                    <td>
+                        <input type="email" id="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="tel">9. <strong>Telefonnummer:</strong> </label>
+                    </td>
+                    <td>
+                        <input type="text" id="tel">
+                    </td>
+                </tr>
+            </table>
+            <div class="question-wrapper">
+                <div class="question">
+                    <label for="name_list">10. <strong>Namen aller Mitarbeiter:innen, die aktiv an der Durchführung der Studie
+                        beteiligt sind und potentiell Zugriff auf vertrauliche und nicht anonymisierte Daten haben:</strong> </label>
+                    <br>
+                    <span class="textarea" role="textbox" id="name_list" style="font-weight: normal" contenteditable></span>
+                </div>
+            </div>
+            <div>
+
+            <div class="question-wrapper">
+                <div class="question">
+                    <form action="/action_page.php">
+                        <label for="stufen">11. <strong>Haben Sie bereits auf einer anderen Stufe des Verfahrens eine Genehmigung erhalten:</strong></label><br><br>
+                        <select id="stufen" name="Stufen" onchange="hideCL1();hideCL2();">
+                            <option value="no">Nein</option>
+                            <option value="s2">Stufe 2</option>
+                            <option value="s3">Stufe 3</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+
+            <div class="question-wrapper">
+                <div class="question">
+                    <form action="/action_page.php">
+                        <label for="myfile">12 .<strong>Falls Sie auf einer anderen Stufe des Verfahrens bereits eine Genehmigung erhalten haben, laden Sie die entsprechenden Belege dafür bitte hier hoch:</strong></label><br><br>
+                        <input type="file" id="myfile" name="myfile" multiple>
+                        <input type="submit" value="Hochladen">
+                    </form>
+                </div>
+            </div>
+            </div>
+            <div class="question-wrapper" id="CL1">
+                <h1>Abschnitt III: Checkliste zum Experiment (Ausschlusskriterien für Stufe 1 <u>und</u> 2)</h1>
+                <p>Bitte beantworten Sie jede Frage, indem Sie das entsprechende Kästchen ankreuzen. Wenn Sie die Frage anklicken erhalten Sie weitere Hinweise.</p>
+                    <table class="yes_no">
+                        <thead>
+                        <tr class="answers">
+                            <th class="question_header"></th>
+                            <th class="yes">Ja</th>
+                            <th class="no">Nein</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="question" id="l1">
+                                <td class="label">
+                                    <button type="button" class="collapsible" >1. Bezieht   die   Studie  <b>schutzbedürftige
+                                        Gruppen</b> ein   (Kinder, Personen   mit kognitiven Beeinträchtigungen oder
+                                        Personen in ungleichen Beziehungen, z.B. Ihre <i>eigenen</i> Student:innen in der
+                                        Lehre, Tiere) ?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_1" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_1" name="schutzbedürftige   Gruppe" value="yes" onclick="{
+                                        document.getElementById('b1').style.display = 'block';
+                                        document.getElementById('t1').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_1" class="hidden">No</label>
+                                    <input type="radio" id="no_1" name="schutzbedürftige   Gruppe" value="no" onclick="{
+                                        document.getElementById('b1').style.display = 'none';
+                                        document.getElementById('t1').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">Experimente mit unmündigen Teilnehmer:innen sind
+                                            grundsätzlich durch die allgemeine Ethikkommission des KITs zu genehmigen.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b1">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_1" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t1">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_1" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l2">
+                                <td class="label">
+                                    <button type="button" class="collapsible" >2. Werden Gewebeproben (einschließlich Blut) von den
+                                        Teilnehmer:innen entnommen?
+                                    </button>
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_2" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_2" name="gewebeproben" value="yes" onclick="{
+                                        document.getElementById('b2').style.display = 'block';
+                                        document.getElementById('t2').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_2" class="hidden">No</label>
+                                    <input type="radio" id="no_2" name="gewebeproben" value="no" onclick="{
+                                        document.getElementById('b2').style.display = 'none';
+                                        document.getElementById('t2').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Experimente, welche die Entnahme von Gewebeproben vorsehen,
+                                            sind grundsätzlich durch die allgemeine Ethikkommission des KITs zu genehmigen.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b2">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_2" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t2">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_2" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b3" style="display: none">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_3" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" style="display: none" id="t3">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_3" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l4">
+                                <td class="label">
+                                    <button type="button" class="collapsible">3. Wird die Studie die <b>Zusammenarbeit von Dritten</b> für den
+                                        erstmaligen Zugang zu den zu rekrutierenden Gruppen oder Einzelpersonen erfordern
+                                        (z.B. Schüler:innen in der   Schule,   Mitglieder   einer   Selbsthilfegruppe,
+                                        Bewohner:innen   eines Pflegeheims, Gefangene)?
+                                    </button>
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_4" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_4" name="zusammenarbeit" value="yes" onclick="{
+                                        document.getElementById('b4').style.display = 'block';
+                                        document.getElementById('t4').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_4" class="hidden">No</label>
+                                    <input type="radio" id="no_4" name="zusammenarbeit" value="no" onclick="{
+                                        document.getElementById('b4').style.display = 'none';
+                                        document.getElementById('t4').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Zu vulnerablen Gruppen gehören Personen, die aufgrund ihrer körperlichen,
+                                            geistigen oder seelischen Konstitution oder sozialen Situation verletzlich
+                                            sind oder nicht in der Lage sind informiertes Einverständnis zur Teilnahme
+                                            am Experiment zu erklären. Beispiele hierfür sind:  Individuen mit
+                                            Beeinträchtigungen beim Treffen von Entscheidungen, ökonomisch
+                                            benachteiligte oder Bildungsbenachteiligte, armutsgefährdete, sowie
+                                            pflegebedürftige Menschen und Häftlinge. Vulnerable Gruppen beziehen in
+                                            diesem Kontext zudem alle Arten von Tieren mit ein. Der/die
+                                            Experimentator:in darf seine Studie nur dann auf vulnerable Gruppen
+                                            ausrichten, wenn es für die Forschungsfrage unabdingbar ist. Ist dies der
+                                            Fall, kreuzen sie „ja“ an und begründen Sie Ihre Entscheidung.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b4">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_4" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t4">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_4" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+                            <div class="question-wrapper" id="CL2">
+                                <h1>Abschnitt IV: Checkliste zum Experiment (Ausschlusskriterien für Stufe 1)</h1>
+                                <p>Bitte beantworten Sie jede Frage, indem Sie das entsprechende Kästchen ankreuzen. Wenn Sie die Frage anklicken erhalten Sie weitere Hinweise.</p>
+                                <table class="yes_no">
+                                    <thead>
+                                        <tr class="answers">
+                                            <th class="question_header"></th>
+                                            <th class="yes">Ja</th>
+                                            <th class="no">Nein</th>
+                                        </tr>
+                                    </thead>
+                        <tbody>
+                            <tr class="question" id="l5">
+                                <td class="label">
+                                    <button type="button" class="collapsible">4. Wird   es   notwendig   sein, dass die Teilnehmer:innen
+                                        ohne   Ihr   Wissen   und   Ihre Zustimmung   zu   diesem   Zeitpunkt   an   der
+                                        Studie   teilnehmen?  (z.B.  <b>verdeckte Beobachtung</b> von Menschen
+                                        an nicht-öffentlichen Orten) oder wird  <b>Täuschung</b> verwendet?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_5" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_5" name="l5" value="yes" onclick="{
+                                        document.getElementById('b5').style.display = 'block';
+                                        document.getElementById('t5').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_5" class="hidden">No</label>
+                                    <input type="radio" id="no_5" name="l5" value="no" onclick="{
+                                        document.getElementById('b5').style.display = 'none';
+                                        document.getElementById('t5').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Zusammenarbeit mit
+                                            Dritten bezieht alle Kooperationen mit KIT-externen Partnern ein, die nicht im
+                                            universitären Kontext tätig sind. Kooperationspartner:innen anderer Universitäten
+                                            sind hier nicht gemeint. Findet das von Ihnen durchgeführte Experiment in
+                                            Kooperation mit nicht-universitären Partnern statt, kreuzen Sie “ja” an. Erläutern
+                                            Sie, wie die Teilnehmer:innen rekrutiert werden, wie sie der Teilnahem zustimmen und
+                                            inwiefern die datenschutzrechtlichen Vorgaben eingehalten werden. Dazu muss
+                                            dargelegt werden, wie die Daten an Dritte weitergegeben werden. Weitergabe von Daten
+                                            ist nur in anonymisierter/pseudonymisierter Form möglich. Bitte legen Sie dar, ob
+                                            ein Kooperationsvertrag vorliegt und welche Aspekte durch diesen geregelt werden.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b5">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_5" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t5">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_5" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l6">
+                                <td class="label">
+                                    <button type="button" class="collapsible">5. Wird   die   Untersuchung   den   Zugang   zu
+                                        <b>persönlichen/sensiblen/vertraulichen Informationen</b> oder Handelsgeheimnissen/nationaler
+                                        Sicherheit beinhalten?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_6" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_6" name="l6" value="yes" onclick="{
+                                        document.getElementById('b6').style.display = 'block';
+                                        document.getElementById('t6').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_6" class="hidden">No</label>
+                                    <input type="radio" id="no_6" name="l6" value="no" onclick="{
+                                        document.getElementById('b6').style.display = 'none';
+                                        document.getElementById('t6').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Täuschung bezieht jegliche Behauptung über den Ablauf oder die Natur des Experimentes mit ein, die
+                                            nichtzutreffend ist. Den Teilnehmer:innen  dürfen Informationen vorenthalten werden
+                                            und vage Formulierungen sind erlaubt, wenn dies im Sinne der Forschungsfrage ist.
+                                            Die vorenthaltenen Informationen dürfen jedoch nicht in Konflikt mit den weiteren
+                                            Instruktionen stehen, da dies ebenfalls unter Täuschung fällt. Täuschung ist auf
+                                            allen Stufen des Prüfverfahrens ein Ausschlussgrund.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b6">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_6" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t6">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_6" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l7">
+                                <td class="label">
+                                    <button type="button" class="collapsible">6. Wird   die  Studie   die  <b>Diskussion   sensibler
+                                        Themen</b> (z.B.   sexuelle   Aktivität, Drogenkonsum, ethnische Zugehörigkeit,
+                                        politisches Verhalten) oder Eliteinterviews beinhalten?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_7" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_7" name="l7" value="yes" onclick="{
+                                        document.getElementById('b7').style.display = 'block';
+                                        document.getElementById('t7').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_7" class="hidden">No</label>
+                                    <input type="radio" id="no_7" name="l7" value="no" onclick="{
+                                        document.getElementById('b7').style.display = 'none';
+                                        document.getElementById('t7').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Sensible Daten sind
+                                            sämtliche die Privatsphäre der Teilnehmer:innen (z.B. sexuelle Aktivität/Sexualität,
+                                            ethnische Herkunft, Drogenkonsum, politisches Verhalten, z.B. Mitgliedschaft in
+                                            Parteien/ Organisation und Teilnahme an Demonstrationen) oder berufsbezogenen
+                                            Informationen (z.B. Insiderwissen oder vertrauliche Betriebsinterna,
+                                            Eliteinterviews). Ohne erkennbaren Mehrwehrt für das Experiment sind Erhebungen
+                                            solcher Daten zu vermeiden. Sollten solche Erhebungen geplant sein, klicken Sie
+                                            bitte ‚Ja‘ and und erläutern Sie ebendiesen Mehrwehrt.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b7">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_7" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t7">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_7" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l8">
+                                <td class="label">
+                                    <button type="button" class="collapsible">7. Sollen den Studienteilnehmer:innen Medikamente,
+                                        Placebos oder andere <b>Substanzen</b> (z.B. Lebensmittelstoffe, Vitamine) verabreicht werden
+                                        oder werden  <b>invasive oder potenziell schädliche Verfahren</b> jeglicher Art durchgeführt?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_8" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_8" name="l8" value="yes" onclick="{
+                                        document.getElementById('b8').style.display = 'block';
+                                        document.getElementById('t8').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_8" class="hidden">No</label>
+                                    <input type="radio" id="no_8" name="l8" value="no" onclick="{
+                                        document.getElementById('b8').style.display = 'none';
+                                        document.getElementById('t8').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Im Experiment muss
+                                            gewährleistet sein, dass die Teilnehmer:innen keinem höheren Schädigungsrisiko als
+                                            in ihrem alltäglichen Leben ausgesetzt sind. Der Einsatz von illegalen Substanzen
+                                            und invasiven Verfahren ist grundsätzlich untersagt. Der Einsatz von psychoaktiven
+                                            Substanzen, Stimulanzien oder non-invasiven Verfahren mit dokumentierten
+                                            Nebenwirkungen (z.B. TMS) muss in einem adäquaten Verhältnis zum Nutzen des
+                                            Experiments stehen, den Teilnehmer:innen angezeigt werden und die
+                                            Experimentator:innen müssen entsprechend geschult sein. (Im Zweifelsfall klicken Sie
+                                            bitte ‚Ja‘ an und erläutern Sie Ihren Fall.)
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b8">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_8" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t8">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_8" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l9">
+                                <td class="label">
+                                    <button type="button" class="collapsible">8. Sind körperliche <b>Schmerzen oder mehr als leichte Beschwerden</b> wahrscheinlich,
+                                        die sich aus der Studie ergeben?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_9" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_9" name="l9" value="yes" onclick="{
+                                        document.getElementById('b9').style.display = 'block';
+                                        document.getElementById('t9').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_9" class="hidden">No</label>
+                                    <input type="radio" id="no_9" name="l9" value="no" onclick="{
+                                        document.getElementById('b9').style.display = 'none';
+                                        document.getElementById('t9').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Im Experiment muss
+                                            gewährleistet sein, dass die Teilnehmer:innen keinem höheren Schädigungsrisiko als
+                                            in ihrem alltäglichen Leben ausgesetzt sind. Der Einsatz von Verfahren, die starke
+                                            physische Schmerzen auslösen können sind untersagt. Bei Verfahren in denen leichte
+                                            physische Schmerzen möglich sind, müssen diese in einem adäquaten Verhältnis zum
+                                            Nutzen des Experiments stehen und den Teilnehmer:innen diese Risiken angezeigt
+                                            werden. (Im Zweifelsfall klicken Sie bitte ‚Ja‘ an und erläutern Sie Ihren Fall.)
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b9">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_9" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t9">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_9" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l10">
+                                <td class="label">
+                                    <button type="button" class="collapsible">9. Könnte die Studie <b>psychischen Stress oder Angst auslösen</b>
+                                        oder Schäden oder negative Folgen verursachen, die über die Risiken im normalen Leben hinausgehen?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_10" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_10" name="l10" value="yes" onclick="{
+                                        document.getElementById('b10').style.display = 'block';
+                                        document.getElementById('t10').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_10" class="hidden">No</label>
+                                    <input type="radio" id="no_10" name="l10" value="no" onclick="{
+                                        document.getElementById('b10').style.display = 'none';
+                                        document.getElementById('t10').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Im Experiment muss
+                                            gewährleistet sein, dass die Teilnehmer:innen keinem höheren Schädigungsrisiko als
+                                            n ihrem alltäglichen Leben ausgesetzt sind. Ein erhöhtes Risiko für psychischen
+                                            Stress und Angst muss in einem adäquaten Verhältnis zum Nutzen des Experiments
+                                            stehen und den Teilnehmer:innen müssen diese Risiken angezeigt werden. (Im
+                                            Zweifelsfall klicken Sie bitte ‚Ja‘ an und erläutern Sie Ihren Fall.)
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b10">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_10" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t10">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_10" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l11">
+                                <td class="label">
+                                    <button type="button" class="collapsible">10. Wird die Studie <b>längere oder sich wiederholende Tests</b> über
+                                        ein einmaliges Laborexperiment hinaus beinhalten?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_11" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_11" name="l11" value="yes" onclick="{
+                                        document.getElementById('b11').style.display = 'block';
+                                        document.getElementById('t11').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_11" class="hidden">No</label>
+                                    <input type="radio" id="no_11" name="l11" value="no" onclick="{
+                                        document.getElementById('b11').style.display = 'none';
+                                        document.getElementById('t11').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Sind wiederholte
+                                            Tests, eine erneute Kontaktaufnahme/Datenerhebung geplant, so muss darauf in der
+                                            Einladung zur Studie sowie in den Informationen für die Teilnehmer:innen
+                                            hingewiesen werden. Für die wiederholte Kontaktaufnahme/ Datenerhebung ist eine
+                                            ausdrückliche Einwilligung der Teilnehmer:in einzuholen, z.B. als Zusatz in der
+                                            allgemeinen Einwilligungserklärung. Experimentator:innen müssen nach bestem Wissen
+                                            und Gewissen sicherstellen, dass die Teilnehmer:innen verstanden haben, dass es sich
+                                            um eine wiederholte Datenerhebung handelt und wann sie die Vergütung erhalten. Es
+                                            muss darauf geachtet werden, dass die Daten weiterhin anonymisiert erhoben werden
+                                            und die erhobenen Daten nicht gemeinsam mit den Kontaktdaten gespeichert werden.
+                                            Dies kann beispielsweise durch die Vergabe von Codes geschehen. Eine mögliche
+                                            Zuordnungstabelle muss unter Verschluss gehalten und nach Ende der Erhebung
+                                            vernichtet werden.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b11">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_11" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t11">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_11" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l13">
+                                <td class="label">
+                                    <button type="button" class="collapsible">11. Handelt es sich bei der Untersuchung <b>um administrative
+                                        oder sichere Daten</b>, die vor   der   Verwendung   von   den   zuständigen   Behörden
+                                        genehmigt  werden müssen?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_13" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_13" name="l13" value="yes" onclick="{
+                                        document.getElementById('b13').style.display = 'block';
+                                        document.getElementById('t13').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_13" class="hidden">No</label>
+                                    <input type="radio" id="no_13" name="l13" value="no" onclick="{
+                                        document.getElementById('b13').style.display = 'none';
+                                        document.getElementById('t13').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Werden administrative
+                                            oder sichere Daten mit den im Experiment erhobenen Daten verknüpft, muss
+                                            sichergestellt werden, dass die Richtlinien zum Datenschutz weiterhin eingehalten
+                                            werden. Verknüpfen Sie solche Daten mit den erhobenen, kreuzen Sie “ja” an und
+                                            erläutern Sie, weshalb diese Verknüpfung datenschutzrechtlich unbedenklich ist.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b13">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_13" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t13">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_13" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l14">
+                                <td class="label">
+                                    <button type="button" class="collapsible">12. Werden den Teilnehmer:innen <b>finanzielle Anreize</b>
+                                        (mit Ausnahme eines angemessenen Aufwands, Anreizen und Zeitausgleichs
+                                        wie bei regelmäßigen Laborexperimenten) angeboten?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_14" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_14" name="l14" value="yes" onclick="{
+                                        document.getElementById('b14').style.display = 'block';
+                                        document.getElementById('t14').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_14" class="hidden">No</label>
+                                    <input type="radio" id="no_14" name="l14" value="no" onclick="{
+                                        document.getElementById('b14').style.display = 'none';
+                                        document.getElementById('t14').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Es muss gewährleistet
+                                            werden, dass die Auszahlung bei einem Experiment angemessen ist. Übertriebene oder
+                                            unverhältnismäßige finanzielle oder anderweitige Anreize sind zu vermeiden, wenn
+                                            anzunehmen ist, dass solche Anreize zu einer Teilnahme nötigen würden. Bei
+                                            Unsicherheit über die Verhältnismäßigkeit der geplanten Auszahlungen, wenden Sie
+                                            sich bitte an die Laborleitung.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b14">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_14" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t14">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_14" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l15">
+                                <td class="label">
+                                    <button type="button" class="collapsible">13. Werden Ihre Recherchen die Untersuchung oder das Engagement
+                                        <b>terroristischer oder gewalttätiger extremistischer</b> Gruppen umfassen?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_15" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_15" name="l15" value="yes" onclick="{
+                                        document.getElementById('b15').style.display = 'block';
+                                        document.getElementById('t15').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_15" class="hidden">No</label>
+                                    <input type="radio" id="no_15" name="l15" value="no" onclick="{
+                                        document.getElementById('b15').style.display = 'none';
+                                        document.getElementById('t15').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td colspan="1" class="label">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            In der Zusammenarbeit
+                                            mit terroristischen oder gewalttätigen Gruppen muss der Schutz der
+                                            Experimentator:innen gewährleistet sein. Hierbei müssen besonders unerfahrene
+                                            Experimentator:innen geschult werden. Sie müssen darauf hingewiesen werden, dass Sie
+                                            als Experimentator:innen kein Zeugnisverweigerungsrecht haben (s. auch 17. Schutz
+                                            der Experimentator:innen). Es muss ausgeschlossen sein, dass durch die Studie zur
+                                            Finanzierung terroristischer oder gewalttätiger Gruppen beigetragen wird.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b15">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_15" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t15">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_15" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l16">
+                                <td class="label">
+                                    <button type="button" class="collapsible">14. Hat Ihre Studie <b>Auswirkungen auf die Umwelt?</b>
+                                        Weitere Informationen finden Sie im Leitfaden zur Forschungsethik der Universität:
+                                        Forschung mit möglichen Auswirkungen auf die Umwelt.
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_16" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_16" name="l16" value="yes" onclick="{
+                                        document.getElementById('b16').style.display = 'block';
+                                        document.getElementById('t16').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_16" class="hidden">No</label>
+                                    <input type="radio" id="no_16" name="l16" value="no" onclick="{
+                                        document.getElementById('b16').style.display = 'none';
+                                        document.getElementById('t16').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td colspan="1" class="label">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Tooltip
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b16">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_16" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t16">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_16" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l17">
+                                <td class="label">
+                                    <button type="button" class="collapsible">15. Gibt es Potenzial für Ihre Studie, <b>kulturell wichtige
+                                        oder sensible Objekte oder Praktiken</b> zu beeinflussen?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_17" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_17" name="l17" value="yes" onclick="{
+                                        document.getElementById('b17').style.display = 'block';
+                                        document.getElementById('t17').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_17" class="hidden">No</label>
+                                    <input type="radio" id="no_17" name="l17" value="no" onclick="{
+                                        document.getElementById('b17').style.display = 'none';
+                                        document.getElementById('t17').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td class="label" colspan="1">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Sensible Objekte sind
+                                            Kulturobjekte und –praktiken. Werden beispielsweise Experimente nach oder vor
+                                            religiösen Zusammenkünften (z.B. Gottesdienst) durchgeführt, kreuzen Sie hier “ja”
+                                            an und begründen Sie die Notwendigkeit.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b17">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_17" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t17">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_17" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l18">
+                                <td class="label">
+                                    <button type="button" class="collapsible">16. Wird die Studie außerhalb Deutschlands stattfinden
+                                        oder bestehen anderweitig erhöhte Risiken für den/die Experimentator:in?
+                                    </button>
+
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_18" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_18" name="l18" value="yes" onclick="{
+                                        document.getElementById('b18').style.display = 'block';
+                                        document.getElementById('t18').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_18" class="hidden">No</label>
+                                    <input type="radio" id="no_18" name="l18" value="no" onclick="{
+                                        document.getElementById('b18').style.display = 'none';
+                                        document.getElementById('t18').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td colspan="1" class="label">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Sind möglicherweise
+                                            Schädigungen der Experimentator:innen zu erwarten (sozialer, ökonomischer,
+                                            physischer, psychischer oder rechtlicher Hinsicht), sollten diese -	sofern
+                                            antizipierbar- im Vorhinein bedacht und möglichst vermieden werden. Besondere
+                                            Schutznahmen sind zu beachten, wenn unerfahrene Experimentator:innen (z.B.
+                                            Student:innen) involviert sind. Dies gilt zum Beispiel, wenn Experimentator:innen
+                                            mit Berichten von Gewalt zu tun haben. Hier sei erwähnt, dass Experimentator:innen
+                                            kein Zeugnisverweigerungsrecht haben. Bei Studien, bei denen die Gefährdungslage
+                                            über die regulärer Laborexperimente hinausgeht, ist dem Antrag eine
+                                            Gefährdungsbeurteilung beizufügen. Auch wenn das Experiment außerhalb Deutschlands
+                                            stattfindet, geben Sie bitte „ja“ an. Erläutern Sie bitte weshalb die Studie nur im
+                                            Ausland durchgeführt werden kann. Bei Forschung, bei der Experimentator:innen durch
+                                            Reisen Risiken aufnehmen müssen, die über die alltäglichen Risiken hinausgehen, ist
+                                            dem Antrag ebenfalls eine Risikobeurteilung beizufügen. Eine Vorlage dazu finden Sie
+                                            hier: Link. Wenn Sie diesen Punkt mit “Ja” ankreuzen müssen, aber nicht von einer
+                                            erhöhten Gefährdung für sich oder andere Beteiligte ausgehen, legen Sie dies bitte
+                                            schlüssig dar.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b18">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_18" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t18">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_18" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l19">
+                                <td class="label">
+                                    <button type="button" class="collapsible">17. Bezieht die Studie <b>die Öffentlichkeit in eine Forschungskapazität</b>
+                                        ein (d.h.die Teilnehmer:innen selbst werden Forschung betreiben)?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_19" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_19" name="l19" value="yes" onclick="{
+                                        document.getElementById('b19').style.display = 'block';
+                                        document.getElementById('t19').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_19" class="hidden">No</label>
+                                    <input type="radio" id="no_19" name="l19" value="no" onclick="{
+                                        document.getElementById('b19').style.display = 'none';
+                                        document.getElementById('t19').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td colspan="1" class="label">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Tooltip
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b19">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_19" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t19">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_19" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l20">
+                                <td class="label">
+                                    <button type="button" class="collapsible">18. Werden <b>persönliche Daten</b> der Teilnehmer:innen gesammelt?
+                                        Die Definition von persönlichen Daten finden Sie auf Seite XYZ
+                                    </button>
+
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_20" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_20" name="l20" value="yes" onclick="{
+                                        document.getElementById('b20').style.display = 'block';
+                                        document.getElementById('t20').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_20" class="hidden">No</label>
+                                    <input type="radio" id="no_20" name="l20" value="no" onclick="{
+                                        document.getElementById('b20').style.display = 'none';
+                                        document.getElementById('t20').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td colspan="1" class="label">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Als persönlich gelten
+                                            alle Daten, die Rückschlüsse auf die Person ermöglichen, zum Beispiel Kontaktdaten,
+                                            Ton- oder Bildaufnahmen. Hier gilt die Datenschutz Grundverordnung (DSGVO). Es muss
+                                            ein Einverständnis für die Erhebung personenbezogener Daten eingeholt werden.
+                                            Teilnehmer:innen können auch nachträglich die Löschung der Daten beantragen. Dies
+                                            gilt so lange bis die Daten anonymisiert wurden, z.B. durch Kodierung der Ton- und
+                                            Bildaufnahmen. Wenn Sie personenbezogene Daten erheben, geben Sie “ja” an und
+                                            erläutern Sie, wie Sie den Datenschutz gewährleisten.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b20">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_20" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t20">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_20" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l22">
+                                <td class="label">
+                                    <button type="button" class="collapsible">19. Erfordert die Anbringung von Sensorik am Körper der
+                                        Teilnehmer:innen das Ablegen religiöser Bekleidung und kann auf diese Anforderung in
+                                        der Einladung zum Experiment nicht hingewiesen werden?
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_22" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_22" name="l22" value="yes" onclick="{
+                                        document.getElementById('b22').style.display = 'block';
+                                        document.getElementById('t22').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_22" class="hidden">No</label>
+                                    <input type="radio" id="no_22" name="l22" value="no" onclick="{
+                                        document.getElementById('b22').style.display = 'none';
+                                        document.getElementById('t22').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td colspan="1" class="label">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Wird in dem
+                                            Experiment Sensorik verwendet, die bei der Anbringung das Ablegen von Kleidung
+                                            voraussetzt oder einzelne Körperstellen freigelegt werden müssen, so muss der/die
+                                            Teilnehmer:in vor Teilnahme der Studie in der Einladung zur Studie sowie in der
+                                            Information für die Teilnehmer:innen darauf hingewiesen werden. Wenn möglich,
+                                            sollten Experimentator:innen unterschiedlicher Geschlechter vor Ort sein. Ist dies
+                                            nicht möglich, muss in der Einladung zur Studie darauf hingewiesen werden. Sind
+                                            diese Punkte berücksichtigt, kann die Frage mit “nein” beantwortet werden.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b22">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_22" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t22">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_22" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l23">
+                                <td class="label">
+                                    <button type="button" class="collapsible">20. Muss für die Anbringung von Sensorik Kleidung der
+                                        Teilnehmer:innen (zeitweise) abgelegt werden? (Wenn Experimentator:innen
+                                        verschiedener Geschlechter anwesend sind, kann diese Frage mit „nein“
+                                        beantwortet werden.)
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_23" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_23" name="l23" value="yes" onclick="{
+                                        document.getElementById('b23').style.display = 'block';
+                                        document.getElementById('t23').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_23" class="hidden">No</label>
+                                    <input type="radio" id="no_23" name="l23" value="no" onclick="{
+                                        document.getElementById('b23').style.display = 'none';
+                                        document.getElementById('t23').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td colspan="1" class="label">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Wird in dem
+                                            Experiment Sensorik verwendet, die bei der Anbringung das Ablegen von religiöser
+                                            Kleidung voraussetzt, so muss der/die Teilnehmer:in vor Teilnahme der Studie in der
+                                            Einladung zur Studie sowie in der Information für die Teilnehmer:innen darauf
+                                            hingewiesen werden. Wenn möglich, sollten Experimentator:innen unterschiedlicher
+                                            Geschlechter vor Ort sein, die es den Teilnehmer:innen ermöglichen auszuwählen von
+                                            wem die Sensorik angebracht werden soll. Ist dies nicht möglich, muss in der
+                                            Einladung zur Studie darauf hingewiesen werden. Sind diese Punkte berücksichtigt,
+                                            kann die Frage mit “nein” beantwortet werden.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b23">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_23" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t23">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_23" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l25">
+                                <td class="label">
+                                    <button type="button" class="collapsible">21. Die Experimentator:innen werden sich direkt an die Teilnehmer:innen wenden, um sie für die Teilnahme
+                                        an   dieser   Studie   zu   rekrutieren.   Wenn   JA,   müssen   alle   Details   des Einstellungsprozesses in diesen Antrag
+                                        aufgenommen werden. Benutzer des Standard-KD²Lab-Protokolls sollten NEIN ankreuzen.
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_25" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_25" name="l25" value="yes" onclick="{
+                                        document.getElementById('b25').style.display = 'block';
+                                        document.getElementById('t25').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_25" class="hidden">No</label>
+                                    <input type="radio" id="no_25" name="l25" value="no" onclick="{
+                                        document.getElementById('b25').style.display = 'none';
+                                        document.getElementById('t25').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td colspan="1" class="label">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Das
+                                            Rekrutierungssystem erlaubt über Selektoren die Ansprache der Teilnehmer:innen mit
+                                            Vor- und Zunamen. Diese systemseitige Ansprache der Teilnehmer:innen ist zulässig,
+                                            von gezielten Emails an einzelne Teilnehmer:innen ist abzusehen. Grundsätzlich gilt:
+                                            Das Standard-Protokoll des KD2Labs sieht keine direkte Verbindung der Experimental-,
+                                            Rekrutierungs- und Auszahlungsdaten, keine weitere Interaktion mit den
+                                            Teilnehmer:innen und keine Zahlung außerhalb dieses Protokolls vor. Falls nicht
+                                            zwingend für das Erkenntnisinteresse der Studie notwendig, bitten wir Sie, nicht von
+                                            diesem Protokoll abzuweichen.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b25">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_25" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t25">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_25" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l26">
+                                <td class="label">
+                                    <button type="button" class="collapsible">22. Diese Untersuchung erfordert die informierte Zustimmung
+                                        der Teilnehmer:innen über das Standard-KD²Lab-Protokoll hinaus (verfügbar unter [URL]).
+                                        Tick JA. Wenn Sie JA ankreuzen, müssen Sie Zustimmungsformulare und Informationsblätter
+                                        (oder deren funktionale Entsprechungen) in diese Anwendung aufnehmen.
+                                        Sie können ein Formular für die Zustimmung der Vorlage und ein Informationsblatt hier herunterladen.
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_26" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_26" name="l26" value="yes" onclick="{
+                                        document.getElementById('b26').style.display = 'block';
+                                        document.getElementById('t26').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_26" class="hidden">No</label>
+                                    <input type="radio" id="no_26" name="l26" value="no" onclick="{
+                                        document.getElementById('b26').style.display = 'none';
+                                        document.getElementById('t26').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td colspan="1" class="label">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Die Dokumente im
+                                            Rahmen des Standard-Protokolls decken alle typischerweise zustimmungspflichtigen und
+                                            ethisch unbedenklichen Aktivitäten ab. Grundsätzlich gilt: Das Standard-Protokoll
+                                            des KD2Labs sieht keine direkte Verbindung der Experimental-, Rekrutierungs- und
+                                            Auszahlungsdaten, keine weitere Interaktion mit den Teilnehmer:innen und keine
+                                            Zahlung außerhalb dieses Protokolls vor. Falls nicht zwingend für das
+                                            Erkenntnisinteresse der Studie notwendig, bitten wir Sie nicht von diesem Protokoll
+                                            abzuweichen.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b26">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_26" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t26">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_26" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                            <tr class="question" id="l27">
+                                <td class="label">
+                                    <button type="button" class="collapsible">23. Die Experimentator:innen stellen den Teilnehmer:innen andere Zahlungsbelege als die Standard-KD²Lab-Formulare
+                                        zur Verfügung. (Wenn JA, müssen diese in dieser Anwendung enthalten sein.)
+                                    </button>
+                                    
+                                </td>
+                                <td class="answers">
+                                    <label for="yes_27" class="hidden">Yes</label>
+                                    <input type="radio" id="yes_27" name="l27" value="yes" onclick="{
+                                        document.getElementById('b27').style.display = 'block';
+                                        document.getElementById('t27').style.display = 'block';
+                                    }">
+                                </td>
+                                <td class="answers">
+                                    <label for="no_27" class="hidden">No</label>
+                                    <input type="radio" id="no_27" name="l27" value="no" onclick="{
+                                        document.getElementById('b27').style.display = 'none';
+                                        document.getElementById('t27').style.display = 'none';
+                                    }">
+                                </td>
+                            </tr>
+                            <tr class="label">
+                                <td colspan="1" class="label">
+                                    <div class="content">
+                                        <p class="collapsible_text">
+                                            Auszahlungen im
+                                            Rahmen von Experimenten des KD2Labs erfolgen nur mit vorher unterschriebenen
+                                            [Werkverträgen?] und nur in Bar gegen Quittung bzw. Über [Überweisungsprotokoll
+                                            hier]. Grundsätzlich gilt: Das Standard-Protokoll des KD2Labs sieht keine direkte
+                                            Verbindung der Experimental-, Rekrutierungs- und Auszahlungsdaten, keine weitere
+                                            Interaktion mit den Teilnehmer:innen und keine Zahlung außerhalb dieses Protokolls
+                                            vor. Falls nicht zwingend für das Erkenntnisinteresse der Studie notwendig, bitten
+                                            wir Sie nicht von diesem Protokoll abzuweichen.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="b27">
+                                <td class="label" colspan="3">
+                                    <label for="begründung_27" class="question_label" >Begründung des/der Experimentator:in:</label>
+                                </td>
+                            </tr>
+                            <tr class="begründung" id="t27">
+                                <td class="textarea" colspan="3">
+                                    <span class="textarea" role="textbox" id="begründung_27" style="font-weight: normal" contenteditable></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            <div class="question-wrapper">
+                <div class="question">
+                    <label for="erläuterung">
+                        <b><i>Sollten Sie in Abschnitt III auf eine oder mehrere der Fragen 3 bis 24 mit "Ja" geantwortet haben,</i></b>
+                        so können Sie hier dem/r Partner:in im Tandem-Verfahren weitere Erläuterungen zukommen lassen:
+                    </label>
+                    <br>
+                    <span class="textarea" role="textbox" id="erläuterung" style="font-weight: normal" contenteditable></span>
+                </div>
+            </div>
+            <div class="question-wrapper">
+                <div class="question">
+                    <label for="inventar">
+                        <b><i>Bitte geben Sie eine Inventarliste aller Materialien an, die den Teilnehmer:innen zur Verfügung gestellt werden.
+                        Wenn die Teilnehmer:innen Computer verwenden, geben Sie die Software an. Bitte   geben   Sie   auch   an,
+                        welche   Materialien  bei   der   Anwendung  enthalten sind. Der Ausschuss kann bei der Überprüfung
+                        Ihrer Studie weitere Einzelheiten zu den Materialien der Teilnehmer:innen einsehen.</i></b>
+                    </label>
+                    <br>
+                    <span class="textarea" role="textbox" id="inventar" style="font-weight: normal" contenteditable></span>
+                </div>
+            </div>
+
+            <div class="question-wrapper">
+                <div class="question">
+                    <form action="/action_page.php">
+                        <label for="myfile"><b><i>Laden Sie hier bitte alle Dokumente und Dateien hoch, die für die Prüfung auf Stufe 2 relevant sein könnten:</b></i></label>
+                        <input type="file" id="myfile" name="myfile" multiple>
+                        <input type="submit" value="Hochladen">
+                    </form>
+                </div>
+            </div>
+            </div>
+
+            <div class="Buttons" role="navigation">
+                <a href="Zertifikat.pdf" id="NextButton" class="next_button" title="→" aria-label="Next" style="float: right">→</a>
+            </div>
+
+        </td>
+        <th class="margins" id="right-margin down"></th>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
