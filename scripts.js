@@ -1,27 +1,46 @@
-window.onload = function (){
-    var radio_buttons_arr = [];
-    const begrundung_divs = document.querySelectorAll('[class = "begründung"]');
-    begrundung_divs.forEach(item => item.style.display = 'none');
-    radio_buttons_arr = Array.from(document.querySelectorAll('[type="radio"]'));
+document.addEventListener('DOMContentLoaded', function () {
+  var navbar = document.getElementById('navbar');
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  var links = navLinks.querySelectorAll('a');
 
-    //remove every 2nd element, need only yes-buttons
-    let i = radio_buttons_arr.length;
-    while (i--) {
-        (i+1) % 2 === 0 && radio_buttons_arr.splice(i,1);
+  // Mobile menu toggle
+  navToggle.addEventListener('click', function () {
+    navLinks.classList.toggle('open');
+  });
+
+  // Close mobile menu on link click
+  links.forEach(function (link) {
+    link.addEventListener('click', function () {
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // Navbar shadow on scroll
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
+  });
 
-    const coll = document.getElementsByClassName("collapsible");
-    const cont = document.getElementsByClassName("content");
-
-    for (let i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            let content = cont[i];
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-    }
-}
+  // Active link highlighting based on scroll position
+  var sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', function () {
+    var scrollPos = window.scrollY + 120;
+    sections.forEach(function (section) {
+      var top = section.offsetTop;
+      var height = section.offsetHeight;
+      var id = section.getAttribute('id');
+      var link = navLinks.querySelector('a[href="#' + id + '"]');
+      if (link) {
+        if (scrollPos >= top && scrollPos < top + height) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      }
+    });
+  });
+});
