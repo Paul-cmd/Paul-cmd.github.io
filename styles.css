@@ -414,6 +414,83 @@ section {
   color: #666;
 }
 
+/* ===== JMP Page ===== */
+.jmp-header {
+  padding: 7rem 2rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #eef1f5 100%);
+  text-align: center;
+}
+.jmp-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0.6rem 0 0.5rem;
+  letter-spacing: -0.02em;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.jmp-authors {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+.jmp-authors a {
+  color: #1a6aa5;
+}
+.jmp-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-appendix {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #1a6aa5;
+  border: 2px solid #1a6aa5;
+  padding: 0.65rem 1.6rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+.btn-appendix:hover {
+  background: #1a6aa5;
+  color: #fff;
+}
+.btn-appendix svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+.jmp-viewer {
+  padding: 0;
+  background: #e8e8e8;
+}
+.pdf-container {
+  width: 100%;
+  height: calc(100vh - 60px);
+}
+.pdf-container object {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.pdf-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 1rem;
+  color: #555;
+  font-size: 1.1rem;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .hero-grid {

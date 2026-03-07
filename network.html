@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coauthor Network — Paul M. Gorny</title>
+  <meta name="description" content="Interactive coauthor network visualization for Paul M. Gorny.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Network-specific styles (self-contained for this page) */
+    .network-wrap {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 60px);
+      margin-top: 60px;
+      background: #f5f7fa;
+      overflow: hidden;
+    }
+    .network-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .network-svg .link {
+      stroke: #ccd;
+      stroke-opacity: 0.45;
+      fill: none;
+    }
+    .network-svg .link.highlighted {
+      stroke: #1a6aa5;
+      stroke-opacity: 0.85;
+    }
+    .network-svg .node-circle {
+      stroke: #fff;
+      stroke-width: 1.5;
+      cursor: pointer;
+      transition: r 0.15s;
+    }
+    .network-svg .node-diamond {
+      stroke: #fff;
+      stroke-width: 1.5;
+      cursor: pointer;
+    }
+    .network-svg .node-label {
+      font-family: 'Source Sans 3', sans-serif;
+      fill: #333;
+      pointer-events: none;
+      text-anchor: middle;
+    }
+
+    /* Tooltip */
+    .net-tooltip {
+      position: absolute;
+      pointer-events: none;
+      background: rgba(26,26,46,0.92);
+      color: #fff;
+      padding: 0.5rem 0.8rem;
+      border-radius: 5px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      max-width: 260px;
+      opacity: 0;
+      transition: opacity 0.15s;
+      z-index: 100;
+    }
+    .net-tooltip.visible { opacity: 1; }
+    .net-tooltip strong { color: #7bb8e0; }
+    .net-tooltip .tt-affil { color: #aab; font-size: 0.78rem; }
+
+    /* Legend */
+    .net-legend {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: rgba(255,255,255,0.94);
+      border: 1px solid #dde;
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.82rem;
+      color: #444;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      z-index: 50;
+    }
+    .net-legend h4 {
+      margin: 0 0 0.4rem;
+      font-size: 0.88rem;
+      color: #1a1a2e;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .legend-diamond {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      transform: rotate(45deg);
+    }
+
+    /* Controls */
+    .net-controls {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+      z-index: 50;
+    }
+    .net-controls button {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid #dde;
+      border-radius: 4px;
+      padding: 0.4rem 0.7rem;
+      cursor: pointer;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.85rem;
+      color: #555;
+      transition: all 0.15s;
+    }
+    .net-controls button:hover {
+      background: #1a6aa5;
+      color: #fff;
+      border-color: #1a6aa5;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Paul M. Gorny</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="jmp.html">JMP</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="index.html#teaching">Teaching</a></li>
+      <li><a href="index.html#cv">CV</a></li>
+      <li><a href="network.html" class="active">Network</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== Network Container ===== -->
+<div class="network-wrap" id="networkWrap">
+  <svg class="network-svg" id="networkSvg"></svg>
+  <div class="net-tooltip" id="tooltip"></div>
+
+  <div class="net-legend">
+    <h4>Coauthor Network</h4>
+    <div class="legend-item"><span class="legend-dot" style="background:#1a6aa5;width:16px;height:16px;"></span> Paul M. Gorny</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#2a9d8f;"></span> Direct coauthor</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#bbb;"></span> Second-degree coauthor</div>
+    <div class="legend-item"><span class="legend-diamond" style="background:#e76f51;"></span> Large collaboration</div>
+  </div>
+
+  <div class="net-controls">
+    <button id="btnZoomIn" title="Zoom in">+</button>
+    <button id="btnZoomOut" title="Zoom out">−</button>
+    <button id="btnReset" title="Reset view">Reset</button>
+  </div>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="network-data.js"></script>
+<script>
+(function () {
+  // --- Nav ---
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  var navbar = document.getElementById('navbar');
+  navToggle.addEventListener('click', function () { navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { navLinks.classList.remove('open'); }); });
+  window.addEventListener('scroll', function () { navbar.classList.toggle('scrolled', window.scrollY > 10); });
+
+  // --- Graph setup ---
+  var svg = d3.select('#networkSvg');
+  var wrap = document.getElementById('networkWrap');
+  var tooltip = document.getElementById('tooltip');
+  var width = wrap.clientWidth;
+  var height = wrap.clientHeight;
+
+  // Color palette
+  var colors = { self: '#1a6aa5', direct: '#2a9d8f', second: '#bbb', project: '#e76f51' };
+  var radii = { self: 22, direct: 10, second: 5, project: 14 };
+
+  // Build node/link maps
+  var data = JSON.parse(JSON.stringify(NETWORK_DATA));
+  var nodeMap = {};
+  data.nodes.forEach(function (n) { nodeMap[n.id] = n; });
+
+  // --- Zoom ---
+  var g = svg.append('g');
+  var zoom = d3.zoom()
+    .scaleExtent([0.2, 5])
+    .on('zoom', function (event) { g.attr('transform', event.transform); });
+  svg.call(zoom);
+
+  document.getElementById('btnZoomIn').addEventListener('click', function () { svg.transition().duration(300).call(zoom.scaleBy, 1.4); });
+  document.getElementById('btnZoomOut').addEventListener('click', function () { svg.transition().duration(300).call(zoom.scaleBy, 0.7); });
+  document.getElementById('btnReset').addEventListener('click', function () { svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity); });
+
+  // --- Force simulation ---
+  var simulation = d3.forceSimulation(data.nodes)
+    .force('link', d3.forceLink(data.links).id(function (d) { return d.id; }).distance(function (d) {
+      var s = d.source.group || (nodeMap[d.source] && nodeMap[d.source].group);
+      var t = d.target.group || (nodeMap[d.target] && nodeMap[d.target].group);
+      if (s === 'self' || t === 'self') return 120;
+      if (s === 'project' || t === 'project') return 100;
+      if (s === 'direct' && t === 'direct') return 80;
+      return 50;
+    }))
+    .force('charge', d3.forceManyBody().strength(function (d) {
+      if (d.group === 'self') return -600;
+      if (d.group === 'direct') return -200;
+      if (d.group === 'project') return -250;
+      return -60;
+    }))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(function (d) { return (radii[d.group] || 5) + 4; }))
+    .force('x', d3.forceX(width / 2).strength(0.04))
+    .force('y', d3.forceY(height / 2).strength(0.04));
+
+  // --- Draw links ---
+  var link = g.append('g').selectAll('line')
+    .data(data.links)
+    .enter().append('line')
+    .attr('class', 'link')
+    .attr('stroke-width', function (d) {
+      var s = d.source.group || (nodeMap[d.source] && nodeMap[d.source].group) || '';
+      var t = d.target.group || (nodeMap[d.target] && nodeMap[d.target].group) || '';
+      if (s === 'self' || t === 'self') return 2;
+      return 1;
+    });
+
+  // --- Draw nodes ---
+  var node = g.append('g').selectAll('.node')
+    .data(data.nodes)
+    .enter().append('g')
+    .attr('class', 'node')
+    .call(d3.drag()
+      .on('start', dragStarted)
+      .on('drag', dragged)
+      .on('end', dragEnded));
+
+  // Circles for regular nodes
+  node.filter(function (d) { return d.shape !== 'diamond'; })
+    .append('circle')
+    .attr('class', 'node-circle')
+    .attr('r', function (d) { return radii[d.group] || 5; })
+    .attr('fill', function (d) { return colors[d.group] || '#999'; });
+
+  // Diamonds for projects
+  node.filter(function (d) { return d.shape === 'diamond'; })
+    .append('rect')
+    .attr('class', 'node-diamond')
+    .attr('width', function (d) { return (radii[d.group] || 10) * 1.6; })
+    .attr('height', function (d) { return (radii[d.group] || 10) * 1.6; })
+    .attr('x', function (d) { return -(radii[d.group] || 10) * 0.8; })
+    .attr('y', function (d) { return -(radii[d.group] || 10) * 0.8; })
+    .attr('rx', 2)
+    .attr('transform', 'rotate(45)')
+    .attr('fill', function (d) { return colors[d.group] || '#999'; });
+
+  // Labels (only for self, direct, project)
+  node.filter(function (d) { return d.group !== 'second'; })
+    .append('text')
+    .attr('class', 'node-label')
+    .attr('dy', function (d) { return (radii[d.group] || 10) + 14; })
+    .attr('font-size', function (d) {
+      if (d.group === 'self') return '13px';
+      if (d.group === 'project') return '10px';
+      return '11px';
+    })
+    .attr('font-weight', function (d) { return d.group === 'self' ? '700' : '500'; })
+    .text(function (d) { return d.name; });
+
+  // --- Interactions ---
+  node.on('mouseover', function (event, d) {
+    // Highlight connected links
+    link.classed('highlighted', function (l) {
+      return l.source.id === d.id || l.target.id === d.id;
+    });
+    // Dim unconnected nodes
+    var connected = new Set();
+    connected.add(d.id);
+    data.links.forEach(function (l) {
+      if (l.source.id === d.id) connected.add(l.target.id);
+      if (l.target.id === d.id) connected.add(l.source.id);
+    });
+    node.style('opacity', function (n) { return connected.has(n.id) ? 1 : 0.15; });
+    link.style('opacity', function (l) {
+      return (l.source.id === d.id || l.target.id === d.id) ? 1 : 0.05;
+    });
+
+    // Tooltip
+    var affilLine = d.affiliation ? '<div class="tt-affil">' + d.affiliation + '</div>' : '';
+    tooltip.innerHTML = '<strong>' + d.name + '</strong>' + affilLine;
+    tooltip.classList.add('visible');
+  })
+  .on('mousemove', function (event) {
+    var rect = wrap.getBoundingClientRect();
+    tooltip.style.left = (event.clientX - rect.left + 14) + 'px';
+    tooltip.style.top = (event.clientY - rect.top - 10) + 'px';
+  })
+  .on('mouseout', function () {
+    link.classed('highlighted', false);
+    node.style('opacity', 1);
+    link.style('opacity', 1);
+    tooltip.classList.remove('visible');
+  })
+  .on('click', function (event, d) {
+    if (d.url) {
+      window.open(d.url, '_blank', 'noopener');
+    }
+  });
+
+  // --- Tick ---
+  simulation.on('tick', function () {
+    link.attr('x1', function (d) { return d.source.x; })
+        .attr('y1', function (d) { return d.source.y; })
+        .attr('x2', function (d) { return d.target.x; })
+        .attr('y2', function (d) { return d.target.y; });
+    node.attr('transform', function (d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+  });
+
+  // --- Drag handlers ---
+  function dragStarted(event, d) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+  function dragged(event, d) {
+    d.fx = event.x;
+    d.fy = event.y;
+  }
+  function dragEnded(event, d) {
+    if (!event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+
+  // --- Resize ---
+  window.addEventListener('resize', function () {
+    width = wrap.clientWidth;
+    height = wrap.clientHeight;
+    simulation.force('center', d3.forceCenter(width / 2, height / 2));
+    simulation.force('x', d3.forceX(width / 2).strength(0.04));
+    simulation.force('y', d3.forceY(height / 2).strength(0.04));
+    simulation.alpha(0.3).restart();
+  });
+})();
+</script>
+</body>
+</html>
