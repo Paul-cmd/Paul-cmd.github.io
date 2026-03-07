@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Paul M. Gorny</title>
+  <meta name="description" content="Blog posts by Paul M. Gorny.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Paul M. Gorny</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="jmp.html">JMP</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="index.html#teaching">Teaching</a></li>
+      <li><a href="index.html#cv">CV</a></li>
+      <li><a href="network.html">Network</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== Page Header ===== -->
+<section class="page-header">
+  <div class="container">
+    <h1 class="section-title">Blog</h1>
+    <p class="page-subtitle">Thoughts, notes, and reflections.</p>
+  </div>
+</section>
+
+<!-- ===== Blog Posts ===== -->
+<section class="blog-feed">
+  <div class="container">
+    <!-- Template for a blog post:
+    <article class="blog-post">
+      <time class="blog-date" datetime="2026-03-07">7 March 2026</time>
+      <h2 class="blog-title"><a href="#">Post Title</a></h2>
+      <p class="blog-excerpt">A short preview of the post content...</p>
+      <a href="#" class="blog-read-more">Read more &rarr;</a>
+    </article>
+    -->
+    <p class="placeholder-text">Posts coming soon.</p>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var navbar = document.getElementById('navbar');
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', function () {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navLinks.classList.remove('open');
+    });
+  });
+  window.addEventListener('scroll', function () {
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
+  });
+});
+</script>
+</body>
+</html>

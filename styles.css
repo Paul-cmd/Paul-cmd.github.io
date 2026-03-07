@@ -414,6 +414,95 @@ section {
   color: #666;
 }
 
+/* ===== Shared Sub-pages (Misc, Blog) ===== */
+.page-header {
+  padding: 7rem 2rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #eef1f5 100%);
+  text-align: center;
+}
+.page-subtitle {
+  font-size: 1.05rem;
+  color: #555;
+  margin-top: 0.4rem;
+}
+.placeholder-text {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+/* -- Miscellaneous / Gallery -- */
+.misc-section {
+  padding: 3rem 0;
+  border-bottom: 1px solid #eee;
+}
+.gallery-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a2e;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+.gallery-item img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+.gallery-caption {
+  font-size: 0.88rem;
+  color: #666;
+  margin-top: 0.4rem;
+}
+
+/* -- Blog -- */
+.blog-feed {
+  padding: 3rem 0;
+}
+.blog-post {
+  padding: 2rem 0;
+  border-bottom: 1px solid #eee;
+}
+.blog-post:first-child {
+  padding-top: 0;
+}
+.blog-date {
+  font-size: 0.85rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.blog-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  margin: 0.3rem 0 0.6rem;
+}
+.blog-title a {
+  color: #1a1a2e;
+  text-decoration: none;
+}
+.blog-title a:hover {
+  color: #1a6aa5;
+}
+.blog-excerpt {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+.blog-read-more {
+  color: #1a6aa5;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.blog-read-more:hover {
+  text-decoration: underline;
+}
+
 /* ===== JMP Page ===== */
 .jmp-header {
   padding: 7rem 2rem 2rem;

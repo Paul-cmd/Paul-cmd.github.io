@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miscellaneous — Paul M. Gorny</title>
+  <meta name="description" content="Photo galleries from road bike travels and triathlons.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Paul M. Gorny</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="jmp.html">JMP</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="index.html#teaching">Teaching</a></li>
+      <li><a href="index.html#cv">CV</a></li>
+      <li><a href="network.html">Network</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== Page Header ===== -->
+<section class="page-header">
+  <div class="container">
+    <h1 class="section-title">Miscellaneous</h1>
+    <p class="page-subtitle">Road cycling, triathlons, and other adventures.</p>
+  </div>
+</section>
+
+<!-- ===== Gallery Sections ===== -->
+<section class="misc-section" id="road-cycling">
+  <div class="container">
+    <h2 class="gallery-heading">Road Cycling</h2>
+    <div class="gallery-grid">
+      <!-- Add images: <div class="gallery-item"><img src="photos/cycling-01.jpg" alt=""><p class="gallery-caption">Caption</p></div> -->
+      <p class="placeholder-text">Photos coming soon.</p>
+    </div>
+  </div>
+</section>
+
+<section class="misc-section" id="triathlons">
+  <div class="container">
+    <h2 class="gallery-heading">Triathlons</h2>
+    <div class="gallery-grid">
+      <p class="placeholder-text">Photos coming soon.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var navbar = document.getElementById('navbar');
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', function () {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navLinks.classList.remove('open');
+    });
+  });
+  window.addEventListener('scroll', function () {
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
+  });
+});
+</script>
+</body>
+</html>
