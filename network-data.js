@@ -123,7 +123,16 @@ var NETWORK_DATA = {
     { id: "bryce", name: "Anthony Bryce", url: "", affiliation: "", group: "second" },
     { id: "daniels", name: "Kevin Daniels", url: "", affiliation: "", group: "second" },
     { id: "fitzhugh", name: "Heather Fitzhugh", url: "", affiliation: "", group: "second" },
-    { id: "michaelides", name: "George Michaelides", url: "", affiliation: "", group: "second" }
+    { id: "michaelides", name: "George Michaelides", url: "", affiliation: "", group: "second" },
+
+    // === SECOND-DEGREE: Houf's coauthors ===
+    { id: "ferraz", name: "Vinícius Ferraz", url: "", affiliation: "", group: "second" },
+    { id: "pitz", name: "Thomas Pitz", url: "", affiliation: "", group: "second" },
+    { id: "sickmann", name: "Jörn Sickmann", url: "", affiliation: "", group: "second" },
+    { id: "schwieren", name: "Christiane Schwieren", url: "", affiliation: "Heidelberg University", group: "second" },
+    { id: "sprenger", name: "Guido Sprenger", url: "", affiliation: "Heidelberg University", group: "second" },
+    { id: "b_vogt", name: "Benedikt Vogt", url: "", affiliation: "", group: "second" },
+    { id: "dillingh", name: "Rik Dillingh", url: "", affiliation: "", group: "second" }
   ],
 
   links: [
@@ -152,6 +161,7 @@ var NETWORK_DATA = {
     { source: "paul", target: "busse" },
     { source: "paul", target: "a_sadrieh" },
     { source: "paul", target: "f_sadrieh" },
+    { source: "paul", target: "houf" },
 
     // === PAUL → PROJECT ENTITIES ===
     { source: "paul", target: "proj_mansci" },
@@ -302,6 +312,25 @@ var NETWORK_DATA = {
     { source: "connolly", target: "bryan" },
     { source: "connolly", target: "bryce" },
     { source: "daniels", target: "fitzhugh" },
-    { source: "daniels", target: "michaelides" }
+    { source: "daniels", target: "michaelides" },
+
+    // === HOUF → second-degree ===
+    { source: "houf", target: "ferraz" },
+    { source: "houf", target: "pitz" },
+    { source: "houf", target: "sickmann" },
+    { source: "houf", target: "schwieren" },
+    { source: "houf", target: "sprenger" },
+    { source: "houf", target: "b_vogt" },
+    { source: "houf", target: "dillingh" },
+
+    // cross-links within Houf's network
+    { source: "ferraz", target: "pitz" },
+    { source: "ferraz", target: "sickmann" },
+    { source: "ferraz", target: "schwieren" },
+    { source: "pitz", target: "sickmann" },
+    { source: "pitz", target: "schwieren" },
+    { source: "sickmann", target: "schwieren" },
+    { source: "schwieren", target: "sprenger" },
+    { source: "b_vogt", target: "dillingh" }
   ]
 };
