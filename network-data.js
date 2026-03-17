@@ -33,6 +33,7 @@ var NETWORK_DATA = {
     { id: "busse", name: "Niklas Busse", url: "", affiliation: "", group: "direct" },
     { id: "a_sadrieh", name: "Abdolkarim Sadrieh", url: "", affiliation: "", group: "direct" },
     { id: "f_sadrieh", name: "Frederic Sadrieh", url: "", affiliation: "", group: "direct" },
+    { id: "houf", name: "Leon Houf", url: "https://leonhouf.github.io/", affiliation: "KIT", group: "direct" },
 
     // === PROJECT ENTITIES (large collaborations) ===
     { id: "proj_mansci", name: "ManSci Reproducibility Collaboration", url: "https://doi.org/10.1287/mnsc.2023.03556", affiliation: "Management Science, 2024", group: "project", shape: "diamond" },
@@ -184,7 +185,11 @@ var NETWORK_DATA = {
     { source: "dorner", target: "wuest" },
 
     // === DIRECT → PROJECT connections ===
-    { source: "nieken", target: "proj_mansci" },
+    { source: "nieken", target: "proj_pnas" },
+    { source: "nieken", target: "proj_manydaughters" },
+    { source: "nieken", target: "proj_manydesigns" },
+    { source: "houf", target: "proj_mansci" },
+    { source: "houf", target: "proj_synthetic" },
     { source: "strohlein", target: "proj_mansci" },
 
     // === CORTES-CORRALES → second-degree ===
