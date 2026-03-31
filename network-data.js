@@ -9,38 +9,31 @@ var NETWORK_DATA = {
     { id: "paul", name: "Paul M. Gorny", url: "index.html", affiliation: "Karlsruhe Institute of Technology", group: "self" },
 
     // === DIRECT COAUTHORS ===
-    { id: "nieken", name: "Petra Nieken", url: "https://www.ibu.kit.edu/english/1967_1975.php", affiliation: "KIT", group: "direct" },
-    { id: "strohlein", name: "Karoline Ströhlein", url: "https://sites.google.com/view/karolinestroehlein", affiliation: "KIT", group: "direct" },
-    { id: "strobel", name: "Christina Strobel", url: "https://christina-strobel.de/", affiliation: "", group: "direct" },
-    { id: "alekseev", name: "Aleksandr Alekseev", url: "https://aalexee.com/", affiliation: "", group: "direct" },
-    { id: "anufriev", name: "Mikhail Anufriev", url: "https://sites.google.com/view/anufriev", affiliation: "", group: "direct" },
-    { id: "cortes", name: "Sebastián Cortes-Corrales", url: "https://sites.google.com/view/sebastiancortescorrales/home", affiliation: "", group: "direct" },
-    { id: "schafer", name: "Louis Schäfer", url: "", affiliation: "KIT", group: "direct" },
+    { id: "nieken", name: "Petra Nieken", url: "https://www.ibu.kit.edu/english/1967_1975.php", affiliation: "Karlsruhe Institute of Technology", group: "direct" },
+    { id: "strohlein", name: "Karoline Ströhlein", url: "https://www.uni-regensburg.de/wirtschaftswissenschaften/fakultaet/org/mikrooekonomik/team/dr-karoline-stroehlein", affiliation: "University of Regensburg", group: "direct" },
+    { id: "strobel", name: "Christina Strobel", url: "https://christina-strobel.de/", affiliation: "Institute for Digital Economics, TU Hamburg", group: "direct" },
+    { id: "alekseev", name: "Aleksandr Alekseev", url: "https://aalexee.com/", affiliation: "University of Regensburg", group: "direct" },
+    { id: "anufriev", name: "Mikhail Anufriev", url: "https://sites.google.com/view/anufriev", affiliation: "University of Technology Sydney", group: "direct" },
+    { id: "cortes", name: "Sebastián Cortes-Corrales", url: "https://sites.google.com/view/sebastiancortescorrales/home", affiliation: "University of Birmingham", group: "direct" },
+    { id: "schafer", name: "Louis Schäfer", url: "https://www.wbk.kit.edu/english/21_4125.php", affiliation: "Karlsruhe Institute of Technology", group: "direct" },
     { id: "grubiak", name: "Kevin Grubiak", url: "https://www.wiwi.uni-passau.de/wirtschaftstheorie/lehrstuhlteam/dr-kevin-grubiak/", affiliation: "University of Passau", group: "direct" },
-    { id: "nasamu", name: "Emike Nasamu", url: "", affiliation: "University of Chester", group: "direct" },
-    { id: "wang", name: "Mengjie Wang", url: "https://sites.google.com/site/mengjiewangeco/", affiliation: "Cardiff University", group: "direct" },
-    { id: "woodard", name: "Ritchie C. Woodard", url: "https://sites.google.com/view/ritchie-woodard/", affiliation: "", group: "direct" },
-    { id: "groos", name: "Eva Groos", url: "", affiliation: "", group: "direct" },
-    { id: "trenkle", name: "Martin Trenkle", url: "", affiliation: "Workwise", group: "direct" },
-    { id: "renner", name: "Benedikt Renner", url: "", affiliation: "", group: "direct" },
-    { id: "kandler", name: "Magnus Kandler", url: "", affiliation: "KIT", group: "direct" },
-    { id: "lanza", name: "Gisela Lanza", url: "", affiliation: "KIT", group: "direct" },
-    { id: "riedinger", name: "Sebastian Riedinger", url: "", affiliation: "KIT", group: "direct" },
-    { id: "wuest", name: "Fabian Wüst", url: "", affiliation: "", group: "direct" },
-    { id: "greif", name: "Anke Greif-Winzrieth", url: "", affiliation: "", group: "direct" },
-    { id: "dorner", name: "Verena Dorner", url: "", affiliation: "", group: "direct" },
-    { id: "weinhardt", name: "Christof Weinhardt", url: "", affiliation: "KIT", group: "direct" },
+    { id: "nasamu", name: "Emike Nasamu", url: "https://www1.chester.ac.uk/departments/social-and-political-science/staff/emike-nasamu", affiliation: "University of Chester", group: "direct" },
+    { id: "wang", name: "Mengjie Wang", url: "https://sites.google.com/site/mengjiewangeco/", affiliation: "Cardiff Business School, Cardiff University", group: "direct" },
+    { id: "woodard", name: "Ritchie C. Woodard", url: "https://sites.google.com/view/ritchie-woodard/", affiliation: "University of East Anglia", group: "direct" },
+    { id: "groos", name: "Eva Groos", url: "", affiliation: "Independent researcher", group: "direct" },
+    { id: "trenkle", name: "Martin Trenkle", url: "", affiliation: "Workwise GmbH", group: "direct" },
+    { id: "renner", name: "Benedikt Renner", url: "", affiliation: "Karlsruhe Institute of Technology", group: "direct" },
+    { id: "kandler", name: "Magnus Kandler", url: "", affiliation: "Karlsruhe Institute of Technology", group: "direct" },
+    { id: "lanza", name: "Gisela Lanza", url: "", affiliation: "Karlsruhe Institute of Technology", group: "direct" },
+    { id: "riedinger", name: "Sebastian Riedinger", url: "", affiliation: "Karlsruhe Institute of Technology", group: "direct" },
+    { id: "wuest", name: "Fabian Wüst", url: "https://im.win.kit.edu/team_3270.php", affiliation: "Karlsruhe Institute of Technology", group: "direct" },
+    { id: "greif", name: "Anke Greif-Winzrieth", url: "", affiliation: "WU Vienna University of Economics and Business", group: "direct" },
+    { id: "dorner", name: "Verena Dorner", url: "https://www.wu.ac.at/en/deco/team/univprofdr-verena-dorner", affiliation: "WU Vienna University of Economics and Business", group: "direct" },
+    { id: "weinhardt", name: "Christof Weinhardt", url: "", affiliation: "Karlsruhe Institute of Technology", group: "direct" },
     { id: "busse", name: "Niklas Busse", url: "", affiliation: "", group: "direct" },
-    { id: "a_sadrieh", name: "Abdolkarim Sadrieh", url: "", affiliation: "", group: "direct" },
+    { id: "a_sadrieh", name: "Abdolkarim Sadrieh", url: "https://www.e-business.ovgu.de/ebusiness/en/Our%2BTeam/Chair.html", affiliation: "Otto von Guericke University Magdeburg", group: "direct" },
     { id: "f_sadrieh", name: "Frederic Sadrieh", url: "", affiliation: "", group: "direct" },
-    { id: "houf", name: "Leon Houf", url: "https://leonhouf.github.io/", affiliation: "KIT", group: "direct" },
-
-    // === PROJECT ENTITIES (large collaborations) ===
-    { id: "proj_mansci", name: "ManSci Reproducibility Collaboration", url: "https://doi.org/10.1287/mnsc.2023.03556", affiliation: "Management Science, 2024", group: "project", shape: "diamond" },
-    { id: "proj_pnas", name: "PNAS Crowd-Sourced Experiment", url: "https://www.pnas.org/doi/10.1073/pnas.2215572120", affiliation: "PNAS, 2023", group: "project", shape: "diamond" },
-    { id: "proj_manydaughters", name: "#ManyDaughters", url: "https://www.manydaughters.com/", affiliation: "Crowd-sourced project", group: "project", shape: "diamond" },
-    { id: "proj_manydesigns", name: "#ManyDesignsCarbon", url: "https://manydesignscarbon.online/", affiliation: "Crowd-sourced project", group: "project", shape: "diamond" },
-    { id: "proj_synthetic", name: "Synthetic Replication Games", url: "https://talkingtomachines.org/projects/imebess-2025-synthetic-replication-games/", affiliation: "Crowd-sourced project", group: "project", shape: "diamond" },
+    { id: "houf", name: "Leon Houf", url: "https://leonhouf.github.io/", affiliation: "Karlsruhe Institute of Technology", group: "direct" },
 
     // === SECOND-DEGREE: Cortes-Corrales's coauthors ===
     { id: "polanski", name: "Arnold Polanski", url: "", affiliation: "", group: "second" },
@@ -110,7 +103,7 @@ var NETWORK_DATA = {
     // === SECOND-DEGREE: Grubiak's coauthors ===
     { id: "isoni", name: "Andrea Isoni", url: "", affiliation: "", group: "second" },
     { id: "sugden", name: "Robert Sugden", url: "", affiliation: "", group: "second" },
-    { id: "zheng", name: "Jiawen Zheng", url: "", affiliation: "", group: "second" },
+    { id: "zheng", name: "Jiwei Zheng", url: "", affiliation: "", group: "second" },
     { id: "arad", name: "Ayala Arad", url: "", affiliation: "", group: "second" },
     { id: "penczynski", name: "Stefan P. Penczynski", url: "", affiliation: "", group: "second" },
 
@@ -163,13 +156,6 @@ var NETWORK_DATA = {
     { source: "paul", target: "f_sadrieh" },
     { source: "paul", target: "houf" },
 
-    // === PAUL → PROJECT ENTITIES ===
-    { source: "paul", target: "proj_mansci" },
-    { source: "paul", target: "proj_pnas" },
-    { source: "paul", target: "proj_manydaughters" },
-    { source: "paul", target: "proj_manydesigns" },
-    { source: "paul", target: "proj_synthetic" },
-
     // === DIRECT-DIRECT connections (coauthors who also coauthor with each other) ===
     { source: "nieken", target: "strohlein" },
     { source: "nieken", target: "lanza" },
@@ -178,29 +164,27 @@ var NETWORK_DATA = {
     { source: "nieken", target: "greif" },
     { source: "nieken", target: "weinhardt" },
     { source: "nieken", target: "a_sadrieh" },
+    { source: "nieken", target: "f_sadrieh" },
     { source: "strohlein", target: "lanza" },
     { source: "strohlein", target: "kandler" },
     { source: "strohlein", target: "schafer" },
-    { source: "strohlein", target: "nieken" },
     { source: "strobel", target: "alekseev" },
     { source: "strobel", target: "groos" },
+    { source: "alekseev", target: "anufriev" },
     { source: "grubiak", target: "wang" },
+    { source: "nasamu", target: "wang" },
+    { source: "renner", target: "schafer" },
     { source: "wuest", target: "greif" },
+    { source: "wuest", target: "busse" },
+    { source: "greif", target: "busse" },
     { source: "nieken", target: "riedinger" },
     { source: "nieken", target: "trenkle" },    // via JMP
     { source: "nieken", target: "wuest" },       // via FrISB-BE
-    { source: "nieken", target: "busse" },        // via FrISB-BE
+    { source: "nieken", target: "busse" },       // via FrISB-BE
     { source: "dorner", target: "greif" },
     { source: "dorner", target: "weinhardt" },
     { source: "dorner", target: "wuest" },
-
-    // === DIRECT → PROJECT connections ===
-    { source: "nieken", target: "proj_pnas" },
-    { source: "nieken", target: "proj_manydaughters" },
-    { source: "nieken", target: "proj_manydesigns" },
-    { source: "houf", target: "proj_mansci" },
-    { source: "houf", target: "proj_synthetic" },
-    { source: "strohlein", target: "proj_mansci" },
+    { source: "a_sadrieh", target: "f_sadrieh" },
 
     // === CORTES-CORRALES → second-degree ===
     { source: "cortes", target: "polanski" },
