@@ -35,6 +35,10 @@ var NETWORK_DATA = {
     { id: "f_sadrieh", name: "Frederic Sadrieh", url: "", affiliation: "", group: "direct" },
     { id: "houf", name: "Leon Houf", url: "https://leonhouf.github.io/", affiliation: "Karlsruhe Institute of Technology", group: "direct" },
 
+    // === PROJECT ENTITIES (large collaborations) ===
+    { id: "proj_mansci", name: "ManSci Reproducibility Collaboration", url: "https://doi.org/10.1287/mnsc.2023.03556", affiliation: "Management Science, 2024", group: "project", shape: "diamond" },
+    { id: "proj_pnas", name: "PNAS Crowd-Sourced Experiment", url: "https://www.pnas.org/doi/10.1073/pnas.2215572120", affiliation: "PNAS, 2023", group: "project", shape: "diamond" },
+
     // === SECOND-DEGREE: Cortes-Corrales's coauthors ===
     { id: "polanski", name: "Arnold Polanski", url: "", affiliation: "", group: "second" },
     { id: "rojo_arjona", name: "David Rojo Arjona", url: "", affiliation: "", group: "second" },
@@ -156,6 +160,10 @@ var NETWORK_DATA = {
     { source: "paul", target: "f_sadrieh" },
     { source: "paul", target: "houf" },
 
+    // === PAUL → PROJECT ENTITIES ===
+    { source: "paul", target: "proj_mansci" },
+    { source: "paul", target: "proj_pnas" },
+
     // === DIRECT-DIRECT connections (coauthors who also coauthor with each other) ===
     { source: "nieken", target: "strohlein" },
     { source: "nieken", target: "lanza" },
@@ -185,6 +193,11 @@ var NETWORK_DATA = {
     { source: "dorner", target: "weinhardt" },
     { source: "dorner", target: "wuest" },
     { source: "a_sadrieh", target: "f_sadrieh" },
+
+    // === DIRECT → PROJECT connections ===
+    { source: "nieken", target: "proj_pnas" },
+    { source: "houf", target: "proj_mansci" },
+    { source: "strohlein", target: "proj_mansci" },
 
     // === CORTES-CORRALES → second-degree ===
     { source: "cortes", target: "polanski" },
