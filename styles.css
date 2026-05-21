@@ -267,20 +267,24 @@ section {
   display: block;
 }
 .abstract-toggle,
-.abstract-toggle + a {
+.paper-action {
   font-size: 0.82rem;
 }
-.abstract-toggle {
+.abstract-toggle,
+.paper-action {
   color: #1a6aa5;
   cursor: pointer;
   margin-top: 0.3rem;
   display: inline-block;
-  border: none;
-  background: none;
   font-family: inherit;
   padding: 0;
 }
-.abstract-toggle:hover {
+.abstract-toggle {
+  border: none;
+  background: none;
+}
+.abstract-toggle:hover,
+.paper-action:hover {
   text-decoration: underline;
 }
 
