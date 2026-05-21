@@ -266,8 +266,11 @@ section {
 .paper-abstract.open {
   display: block;
 }
-.abstract-toggle {
+.abstract-toggle,
+.abstract-toggle + a {
   font-size: 0.82rem;
+}
+.abstract-toggle {
   color: #1a6aa5;
   cursor: pointer;
   margin-top: 0.3rem;
