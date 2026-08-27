@@ -16,6 +16,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Bootstrap-like abstract collapse toggles (no Bootstrap JS dependency)
+  var abstractToggles = document.querySelectorAll('[data-bs-toggle="collapse"]');
+  abstractToggles.forEach(function (toggle) {
+    var targetSelector = toggle.getAttribute('data-bs-target');
+    if (!targetSelector) return;
+
+    var target = document.querySelector(targetSelector);
+    if (!target) return;
+
+    var initialExpanded = target.classList.contains('show') || target.classList.contains('open');
+    target.classList.remove('open');
+    setCollapseState(toggle, target, initialExpanded);
+
+    toggle.addEventListener('click', function () {
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      setCollapseState(toggle, target, !expanded);
+    });
+  });
+
   // Navbar shadow on scroll
   window.addEventListener('scroll', function () {
     if (window.scrollY > 10) {
@@ -43,4 +62,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  function setCollapseState(toggle, target, expanded) {
+    toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    toggle.classList.toggle('collapsed', !expanded);
+    target.classList.toggle('show', expanded);
+  }
 });

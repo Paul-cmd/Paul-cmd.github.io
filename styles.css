@@ -252,7 +252,7 @@ section {
   border-radius: 4px;
   display: none;
 }
-.paper-abstract.open {
+.paper-abstract.show {
   display: block;
 }
 .abstract-toggle,
@@ -271,6 +271,17 @@ section {
 .abstract-toggle {
   border: none;
   background: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.abstract-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  transform-origin: 50% 50%;
+}
+.abstract-toggle:not(.collapsed) .abstract-arrow {
+  transform: rotate(90deg);
 }
 .abstract-toggle:hover,
 .paper-action:hover {
