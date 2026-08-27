@@ -3,12 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='dark'&&t!=='light'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <title>Paul M. Gorny</title>
   <meta name="description" content="Paul M. Gorny — Postdoctoral Researcher in Behavioral and Experimental Economics at Karlsruhe Institute of Technology (KIT).">
+  <link rel="canonical" href="https://paul-cmd.github.io/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a6aa5'/><text x='16' y='23' font-family='Georgia,serif' font-size='17' font-weight='700' fill='white' text-anchor='middle'>PG</text></svg>">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paul M. Gorny">
+  <meta property="og:description" content="Postdoctoral Researcher in Behavioral and Experimental Economics at Karlsruhe Institute of Technology (KIT).">
+  <meta property="og:url" content="https://paul-cmd.github.io/">
+  <meta property="og:image" content="https://paul-cmd.github.io/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://paul-cmd.github.io/profile.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Paul M. Gorny",
+    "url": "https://paul-cmd.github.io/",
+    "image": "https://paul-cmd.github.io/profile.jpg",
+    "jobTitle": "Postdoctoral Researcher",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Karlsruhe Institute of Technology"
+    },
+    "sameAs": [
+      "https://scholar.google.com/citations?user=lVOmG1wAAAAJ&hl=en",
+      "https://orcid.org/0000-0003-3737-2695",
+      "https://www.researchgate.net/profile/Paul-Gorny",
+      "https://www.linkedin.com/in/paul-m-gorny-755743176/"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -16,7 +46,7 @@
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="#home" class="nav-brand">Paul M. Gorny</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
@@ -27,6 +57,10 @@
       <li><a href="#cv">CV</a></li>
       <li><a href="network.html">Network</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 110-10 5 5 0 010 10zm0-13a1 1 0 011 1v1a1 1 0 11-2 0V5a1 1 0 011-1zm0 14a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM4 12a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm14 0a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1zM6.34 6.34a1 1 0 011.42 0l.7.7A1 1 0 117.05 8.46l-.71-.7a1 1 0 010-1.42zm9.9 9.9a1 1 0 011.41 0l.71.7a1 1 0 11-1.41 1.42l-.71-.71a1 1 0 010-1.41zM17.66 6.34a1 1 0 010 1.42l-.71.7A1 1 0 1115.54 7.05l.71-.71a1 1 0 011.41 0zM7.76 16.24a1 1 0 010 1.41l-.71.71A1 1 0 015.64 16.95l.7-.71a1 1 0 011.42 0z"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+    </button>
   </div>
 </nav>
 
@@ -34,7 +68,7 @@
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-grid">
-      <img src="profile.jpg" alt="Paul M. Gorny" class="hero-photo">
+      <img src="profile.jpg" alt="Paul M. Gorny" class="hero-photo" width="260" height="260" decoding="async">
       <div class="hero-text">
         <h1>Paul M. Gorny</h1>
         <p class="subtitle">Postdoctoral Researcher &middot; Karlsruhe Institute of Technology</p>
@@ -88,22 +122,61 @@
         <div class="paper-title"><a href="https://doi.org/10.1007/s00199-024-01569-6" target="_blank" rel="noopener">How Strength Asymmetries Shape Multi-Sided Conflicts</a></div>
         <div class="paper-details"><span class="coauthors">joint with Sebasti&agrave;n Cortes-Corrales</span> &middot; <em>Economic Theory</em>, 2024</div>
         <div class="paper-note">Older working paper version (incl. a proof that no closed-form solutions exist for non-trivial graphs): <a href="https://drive.google.com/open?id=1yzwuROgfXEfcDfw1iYEqKL7Te_bjrqDa" target="_blank" rel="noopener">Generalising Conflict Networks</a></div>
+        <button class="paper-action cite-toggle" type="button" data-cite="cite-strength">Cite</button>
+        <pre class="bibtex-block" id="cite-strength" hidden>@article{cortescorrales2024strength,
+  author  = {Cortes-Corrales, Sebasti{\'a}n and Gorny, Paul M.},
+  title   = {How Strength Asymmetries Shape Multi-Sided Conflicts},
+  journal = {Economic Theory},
+  year    = {2024},
+  doi     = {10.1007/s00199-024-01569-6}
+}</pre>
       </div>
 
       <div class="paper">
         <div class="paper-title"><a href="https://doi.org/10.1287/mnsc.2023.03556" target="_blank" rel="noopener">Reproducibility in Management Science</a></div>
         <div class="paper-details"><span class="coauthors">by Fi&scaron;ar, M., Greiner, B., Huber, C., Katok, E., Ozkes, A., and the Management Science Reproducibility Collaboration</span> &middot; <em>Management Science</em>, 70(3), pp.&nbsp;1343–2022, 2024</div>
         <div class="paper-note">Contributed as a Member of the Management Science Reproducibility Collaboration.</div>
+        <button class="paper-action cite-toggle" type="button" data-cite="cite-reproducibility">Cite</button>
+        <pre class="bibtex-block" id="cite-reproducibility" hidden>@article{fisar2024reproducibility,
+  author  = {Fi{\v s}ar, Milo{\v s} and Greiner, Ben and Huber, Christoph and Katok, Elena and Ozkes, Ali and {Management Science Reproducibility Collaboration}},
+  title   = {Reproducibility in Management Science},
+  journal = {Management Science},
+  volume  = {70},
+  number  = {3},
+  year    = {2024},
+  doi     = {10.1287/mnsc.2023.03556}
+}</pre>
       </div>
 
       <div class="paper">
         <div class="paper-title"><a href="https://doi.org/10.3389/frbhe.2023.1220563" target="_blank" rel="noopener">Prosocial behavior among human workers in robot-augmented production teams—A field-in-the-lab experiment</a></div>
         <div class="paper-details"><span class="coauthors">joint with Benedikt Renner and Louis Sch&auml;fer</span> &middot; <em>Frontiers in Behavioral Economics</em>, 2, 1220563, 2023 &middot; <a href="https://aspredicted.org/dn896.pdf" target="_blank" rel="noopener">preregistration</a></div>
+        <button class="paper-action cite-toggle" type="button" data-cite="cite-prosocial">Cite</button>
+        <pre class="bibtex-block" id="cite-prosocial" hidden>@article{gorny2023prosocial,
+  author  = {Gorny, Paul M. and Renner, Benedikt and Sch{\"a}fer, Louis},
+  title   = {Prosocial Behavior Among Human Workers in Robot-Augmented Production Teams---A Field-in-the-Lab Experiment},
+  journal = {Frontiers in Behavioral Economics},
+  volume  = {2},
+  pages   = {1220563},
+  year    = {2023},
+  doi     = {10.3389/frbhe.2023.1220563}
+}</pre>
       </div>
 
       <div class="paper">
         <div class="paper-title"><a href="https://www.pnas.org/doi/10.1073/pnas.2215572120" target="_blank" rel="noopener">Competition and moral behavior: A meta-analysis of forty-five crowd-sourced experimental designs</a></div>
         <div class="paper-details"><span class="coauthors">joint with Christoph Huber, Anna Dreber, J&uuml;rgen Huber, Magnus Johannesson, Michael Kirchler, Utz Weitzel, Felix Holzmeister and others</span> &middot; <em>PNAS</em>, 120(23), e2215572120, 2023</div>
+        <button class="paper-action cite-toggle" type="button" data-cite="cite-pnas">Cite</button>
+        <pre class="bibtex-block" id="cite-pnas" hidden>@article{huber2023competition,
+  author  = {Huber, Christoph and Dreber, Anna and Huber, J{\"u}rgen and Johannesson, Magnus and Kirchler, Michael and Weitzel, Utz and Holzmeister, Felix and Gorny, Paul M. and others},
+  title   = {Competition and Moral Behavior: A Meta-Analysis of Forty-Five Crowd-Sourced Experimental Designs},
+  journal = {Proceedings of the National Academy of Sciences},
+  volume  = {120},
+  number  = {23},
+  pages   = {e2215572120},
+  year    = {2023},
+  doi     = {10.1073/pnas.2215572120}
+}</pre>
       </div>
     </div>
 
@@ -114,7 +187,13 @@
       <div class="paper">
         <div class="paper-title"><a href="jmp.html">The Gender of Opportunity: How Gendered Job Titles Affect Job Seeker Attraction</a></div>
         <div class="paper-details"><span class="coauthors">joint with Petra Nieken and Martin Trenkle</span> &middot; <strong>Job Market Paper</strong> &middot; under review</div>
-        <button class="abstract-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#abs-jmp" aria-expanded="false" aria-controls="abs-jmp"><span class="abstract-arrow" aria-hidden="true">&#9654;</span> Abstract</button> <a class="paper-action" href="appendix.pdf" target="_blank" rel="noopener">Online Appendix</a>
+        <button class="abstract-toggle collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#abs-jmp" aria-expanded="false" aria-controls="abs-jmp"><span class="abstract-arrow" aria-hidden="true">&#9654;</span> Abstract</button> <a class="paper-action" href="appendix.pdf" target="_blank" rel="noopener">Online Appendix</a> <button class="paper-action cite-toggle" type="button" data-cite="cite-jmp">Cite</button>
+        <pre class="bibtex-block" id="cite-jmp" hidden>@unpublished{gorny2026gender,
+  author = {Gorny, Paul M. and Nieken, Petra and Trenkle, Martin},
+  title  = {The Gender of Opportunity: How Gendered Job Titles Affect Job Seeker Attraction},
+  note   = {Working paper},
+  year   = {2026}
+}</pre>
         <div class="paper-abstract collapse" id="abs-jmp">Language carries information. In labor markets, even minimal linguistic cues in job ads can function as signals that update job seekers’ beliefs about organizational culture and thereby shape application behavior. We study this mechanism using three complementary datasets. In a large-scale field experiment on a major German job platform, switching job titles from the generic masculine to a gender-fair form increases female applications in Business &amp; Management by roughly 50%, with no decline in male applications. This effect is mirrored by a significant increase in female clicks, indicating that the signal operates already at the stage of initial consideration. Effects are absent in Marketing &amp; Sales and in IT &amp; Development overall, but emerge for IT positions posted by non-IT firms–consistent with a belief-updating mechanism that requires sufficiently elastic priors. An online study with hiring experts shows that gender-fair title usage is driven more by genuine support for gender equality than by strategic motives, suggesting that the titles are credible signals of employer type. A laboratory eye-tracking experiment with job seekers confirms that the behavioral response reflects belief-based evaluation rather than automatic visual salience. Together, the evidence demonstrates that language operates as a market signal in recruitment: a virtually costless three-character change can meaningfully expand the applicant pool when prior beliefs have room for updating.</div>
       </div>
 
@@ -332,6 +411,10 @@
     &copy; 2026 Paul M. Gorny
   </div>
 </footer>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/></svg>
+</button>
 
 <script src="scripts.js"></script>
 </body>

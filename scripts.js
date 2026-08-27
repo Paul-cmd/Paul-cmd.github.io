@@ -6,13 +6,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Mobile menu toggle
   navToggle.addEventListener('click', function () {
-    navLinks.classList.toggle('open');
+    var isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
   // Close mobile menu on link click
   links.forEach(function (link) {
     link.addEventListener('click', function () {
       navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Theme toggle (persisted; initial theme set in <head> to avoid flash)
+  var themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  }
+
+  // Back to top
+  var backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', function () {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // BibTeX cite buttons: reveal block and copy to clipboard
+  document.querySelectorAll('.cite-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var block = document.getElementById(btn.getAttribute('data-cite'));
+      if (!block) return;
+      block.hidden = !block.hidden;
+      if (!block.hidden && navigator.clipboard) {
+        navigator.clipboard.writeText(block.textContent).then(function () {
+          var original = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = original; }, 1500);
+        }).catch(function () {});
+      }
     });
   });
 
