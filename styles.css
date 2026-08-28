@@ -924,6 +924,16 @@ html[data-theme="dark"] .net-controls button {
   border-color: #262b33;
   color: #c9d1d9;
 }
+html[data-theme="dark"] .network-svg .node-label {
+  fill: #c9d1d9;
+}
+html[data-theme="dark"] .network-svg .node-circle,
+html[data-theme="dark"] .network-svg .node-diamond {
+  stroke: #0f1115;
+}
+html[data-theme="dark"] .network-svg .link {
+  stroke: #4a525d;
+}
 
 /* ===== Print ===== */
 @media print {
