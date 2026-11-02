@@ -18,7 +18,7 @@ var NETWORK_DATA = {
     { id: "cortes", name: "Sebastián Cortes-Corrales", url: "https://sites.google.com/view/sebastiancortescorrales/home", affiliation: "University of Birmingham", group: "direct" },
     { id: "schafer", name: "Louis Schäfer", url: "https://www.wbk.kit.edu/english/21_4125.php", affiliation: "Karlsruhe Institute of Technology", group: "direct" },
     { id: "grubiak", name: "Kevin Grubiak", url: "https://www.wiwi.uni-passau.de/wirtschaftstheorie/lehrstuhlteam/dr-kevin-grubiak/", affiliation: "University of Passau", group: "direct" },
-    { id: "nasamu", name: "Emike Nasamu", url: "https://www1.chester.ac.uk/departments/social-and-political-science/staff/emike-nasamu", affiliation: "University of Chester", group: "direct" },
+    { id: "nasamu", name: "Emike Nasamu", affiliation: "Competition and Markets Authority", group: "direct" },
     { id: "wang", name: "Mengjie Wang", url: "https://sites.google.com/site/mengjiewangeco/", affiliation: "Cardiff Business School, Cardiff University", group: "direct" },
     { id: "woodard", name: "Ritchie C. Woodard", url: "https://sites.google.com/view/ritchie-woodard/", affiliation: "University of East Anglia", group: "direct" },
     { id: "groos", name: "Eva Groos", url: "", affiliation: "Independent researcher", group: "direct" },
