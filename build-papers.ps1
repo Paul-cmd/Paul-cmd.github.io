@@ -1,11 +1,12 @@
 <#
 .SYNOPSIS
-    Compiles 'The Gender of Opportunity' and its Online Appendix and exports PDFs to the site repo.
+    Compiles 'The Gender of Opportunity' (job market paper) and its Online Appendix and exports PDFs to the site repo.
 
 .DESCRIPTION
     Runs pdflatex+bibtex+pdflatex+pdflatex on OnlineAppendix.tex first, then on main.tex.
-    Copies main.pdf -> gender_of_opportunity.pdf and OnlineAppendix.pdf -> gender_of_opportunity_appendix.pdf.
-    Since 2026/27 jmp.pdf is the AI agentic penalty paper (copied from its own Draft/main.pdf); this script does not touch it.
+    Copies main.pdf -> jmp.pdf and OnlineAppendix.pdf -> appendix.pdf into this script's directory.
+    Since 2026/27 'The Gender of Opportunity' is again the job market paper (jmp.pdf / appendix.pdf).
+    The AI agentic penalty paper lives separately as ai_agentic_penalty.pdf; this script does not touch it.
 #>
 
 $ErrorActionPreference = 'Stop'
@@ -57,18 +58,18 @@ Push-Location $TexSourceDir
 try {
     # 1. Build Online Appendix
     $AppendixPdf = Invoke-LatexBuild -TexFile 'OnlineAppendix.tex'
-    Copy-Item $AppendixPdf (Join-Path $SiteRoot 'gender_of_opportunity_appendix.pdf') -Force
-    Write-Host "  -> Copied to $SiteRoot\gender_of_opportunity_appendix.pdf" -ForegroundColor Yellow
+    Copy-Item $AppendixPdf (Join-Path $SiteRoot 'appendix.pdf') -Force
+    Write-Host "  -> Copied to $SiteRoot\appendix.pdf" -ForegroundColor Yellow
 
-    # 2. Build main paper (The Gender of Opportunity)
+    # 2. Build main paper (The Gender of Opportunity, job market paper)
     $MainPdf = Invoke-LatexBuild -TexFile 'main.tex'
-    Copy-Item $MainPdf (Join-Path $SiteRoot 'gender_of_opportunity.pdf') -Force
-    Write-Host "  -> Copied to $SiteRoot\gender_of_opportunity.pdf" -ForegroundColor Yellow
+    Copy-Item $MainPdf (Join-Path $SiteRoot 'jmp.pdf') -Force
+    Write-Host "  -> Copied to $SiteRoot\jmp.pdf" -ForegroundColor Yellow
 
     Write-Host "`n=== Done! ===" -ForegroundColor Green
     Write-Host "Files ready in $SiteRoot :"
-    Write-Host "  - gender_of_opportunity.pdf"
-    Write-Host "  - gender_of_opportunity_appendix.pdf"
+    Write-Host "  - jmp.pdf"
+    Write-Host "  - appendix.pdf"
 }
 finally {
     Pop-Location
