@@ -781,6 +781,11 @@ html[data-theme="dark"] .theme-toggle .icon-moon {
   color: #333;
 }
 
+/* Intro line under a section title (research fields, teaching summary) */
+.section-lead {
+  color: #555;
+}
+
 /* ===== Dark Mode ===== */
 html[data-theme="dark"] body {
   background: #0f1115;
@@ -841,7 +846,8 @@ html[data-theme="dark"] .teaching-detail,
 html[data-theme="dark"] .blog-excerpt,
 html[data-theme="dark"] .cv-content p,
 html[data-theme="dark"] .page-subtitle,
-html[data-theme="dark"] .jmp-authors {
+html[data-theme="dark"] .jmp-authors,
+html[data-theme="dark"] .section-lead {
   color: #9aa4af;
 }
 html[data-theme="dark"] .hero-links a {
